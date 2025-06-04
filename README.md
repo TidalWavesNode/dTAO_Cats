@@ -5,7 +5,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 
 ---
 
-## 🧠 AI Data, Training, Inference
+## #1 🧠 AI Data, Training, Inference
 
 | UID | Subnet Name                  |
 |-----|------------------------------|
@@ -35,7 +35,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 96  | FLock OFF                    |
 | 105 | SoundsRight                  |
 
-## 🖥️ Compute, Storage, Infrastructure
+## #2 🖥️ Compute, Storage, Infrastructure
 
 | UID | Subnet Name           |
 |-----|-----------------------|
@@ -56,7 +56,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 91  | tensorprox            |
 | 97  | FlameWire             |
 
-## 📈 Trading and Yield
+## #3 📈 Trading and Yield
 
 | UID | Subnet Name                      |
 |-----|----------------------------------|
@@ -72,7 +72,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 88  | Sταking                          |
 | 106 | Liquidity Provisioning           |
 
-## 🎨 Generative AI
+## #4 🎨 Generative AI
 
 | UID | Subnet Name         |
 |-----|---------------------|
@@ -86,7 +86,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 85  | Vidaio              |
 | 86  | MIAO                |
 
-## 👨‍💻 Coding and AI Agents
+## #5 👨‍💻 Coding and AI Agents
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -101,7 +101,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 92  | ReinforcedAI            |
 | 94  | Eastworld               |
 
-## 🏆 Sports Predictions
+## #6 🏆 Sports Predictions
 
 | UID | Subnet Name   |
 |-----|---------------|
@@ -109,7 +109,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 41  | SPORTSTENSOR  |
 | 44  | Score         |
 
-## 🧬 DeSci (Decentralized Science)
+## #7 🧬 DeSci (Decentralized Science)
 
 | UID | Subnet Name |
 |-----|-------------|
@@ -117,7 +117,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 68  | NOVA        |
 | 76  | Safe Scan   |
 
-## 🌐 Social & Indexing
+## #8 🌐 Social & Indexing
 
 | UID | Subnet Name |
 |-----|-------------|
@@ -125,7 +125,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 22  | Desearch    |
 | 23  | Nuance      |
 
-## 📣 Marketing & Discovery Platforms
+## #9 📣 Marketing & Discovery Platforms
 
 | UID | Subnet Name |
 |-----|-------------|
@@ -135,7 +135,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 87  | CheckerChain|
 | 93  | Bitcast     |
 
-## ❓ Unknown & For Sale
+## #10 ❓ Unknown & For Sale
 
 | UID | Subnet Name |
 |-----|-------------|
@@ -151,7 +151,7 @@ A categorized reference of Bittensor subnets. Ideal for scripts or frontend tool
 | 102 | for sale    |
 | 104 | Unknown     |
 
-## 🚫 Not Active (DO NOT BUY)
+## #11 🚫 Not Active (DO NOT BUY)
 
 | UID | Subnet Name             |
 |-----|-------------------------|
