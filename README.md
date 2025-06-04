@@ -189,24 +189,29 @@ This script helps you automatically stake a chosen amount of TAO across all subn
 
 - Python 3.7+
 - `btcli` installed and in your `$PATH`
-- Your Bittensor wallet setup
 - This `README.md` must be present in the same folder as the script
 
 ### 🚀 Quick Start
 
-1. **Clone this repository**
+1. Install prereqs
+```
+sudo apt update
+sudo apt install python3 python3-pip -y
+```
+
+2. **Clone this repository**
 ```
 git clone https://github.com/TidalWavesNode/dTAO_Cats.git
 ```
 ```
 cd dTAO_Cats
 ```
-1. Run the script
+3. Run the script
 ```
 python3 stake_by_category.py
 ```
 
-3. Follow the prompts
+4. Follow the prompts
 Choose a category (0–10)
 *Category 11 is shown for reference only and cannot be selected.
 Enter wallet name and password.
