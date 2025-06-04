@@ -1,5 +1,26 @@
 ## 🛠️ How to Use the TAO Staking Script
 
+## 📚 Table of Contents
+
+- [📋 Requirements](#-requirements)
+- [🚀 Quick Start](#-quick-start)
+- [📁 Example Log Output](#-example-log-output)
+- [⚠️ Disclaimer](#️-disclaimer)
+- [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
+  - [#0 🌱 Root](#0--root)
+  - [#1 🧠 AI Data, Training, Inference](#1--ai-data-training-inference)
+  - [#2 🖥️ Compute, Storage, Infrastructure](#2--compute-storage-infrastructure)
+  - [#3 📈 Trading and Yield](#3--trading-and-yield)
+  - [#4 🎨 Generative AI](#4--generative-ai)
+  - [#5 👨‍💻 Coding and AI Agents](#5--coding-and-ai-agents)
+  - [#6 🏆 Sports Predictions](#6--sports-predictions)
+  - [#7 🧬 DeSci (Decentralized Science)](#7--desci-decentralized-science)
+  - [#8 🌐 Social & Indexing](#8--social--indexing)
+  - [#9 📣 Marketing & Discovery Platforms](#9--marketing--discovery-platforms)
+  - [#10 ❓ Unknown & For Sale](#10--unknown--for-sale)
+  - [#11 🚫 Not Active (DO NOT BUY)](#11--not-active-do-not-buy)
+
+
 This script helps you automatically stake a chosen amount of TAO across all subnets in a selected category.
 
 ### 📋 Requirements
