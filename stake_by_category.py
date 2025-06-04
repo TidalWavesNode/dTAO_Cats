@@ -77,4 +77,5 @@ def stake(wallet, uid, amount, password, log_file):
 
         log_file.write(f"{datetime.utcnow().isoformat()} | UID: {uid} | Alpha: {alpha} | TAO Used: {amount:.8f} | Rate: {rate} τ/α | Slippage: {slippage}%\n")
     except Exception as e:
-        print(f"[UID]()
+        print(f"[UID {uid}] ✅", output)
+
