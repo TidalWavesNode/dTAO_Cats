@@ -79,8 +79,8 @@ def stake(wallet, uid, amount, password, log_file):
 
 # Start interaction
 def main():
-    print("📊 Bittensor TAO Staking Assistant")
-    print("Choose an investment category:")
+    print("📊 Bittensor TAO Staking by Category")
+    print("Choose a subnet category:")
 
     for k, v in categories.items():
         print(f"{k}: {v}")
