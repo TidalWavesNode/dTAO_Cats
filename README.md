@@ -4,6 +4,11 @@
 A categorized reference of Bittensor subnets.
 
 ---
+## #0 🌱 Root
+
+| UID | Subnet Name                  |
+|-----|------------------------------|
+| 0   | Root                         |
 
 ## #1 🧠 AI Data, Training, Inference
 
@@ -161,12 +166,14 @@ A categorized reference of Bittensor subnets.
 | 95  | Unknown                 |
 | 98  | Creator                 |
 | 99  | Algo                    |
+| 100 | Unknown                 |
 | 101 | Unknown                 |
 | 103 | Unknown                 |
 | 107 | Tiger Alpha             |
 | 108 | Internet of Intelligence|
 | 109 | Si                      |
 | 110 | Unknown                 |
+| 111 | Unknown                 |
 | 112 | TopSecret               |
 | 113 | taonado                 |
 | 114 | Єclipse Project         |
