@@ -1,7 +1,7 @@
 
 # 🌐 Bittensor Subnet Directory
 
-A categorized reference of Bittensor subnets. Ideal for scripts or frontend tools that need organized subnet data.
+A categorized reference of Bittensor subnets.
 
 ---
 
