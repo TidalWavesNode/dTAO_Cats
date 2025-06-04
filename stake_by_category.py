@@ -5,20 +5,23 @@ import getpass
 from datetime import datetime
 
 # All categories (including #11 for display, but not selectable)
-categories = {
-     0: "🌱 Root",                               
-     1: "🧠 AI Data, Training, Inference",       
-     2: "🖥️ Compute, Storage, Infrastructure",   
-     3: "📈 Trading and Yield",                 
-     4: "🎨 Generative AI",                     
-     5: "👨‍💻 Coding and AI Agents",             
-     6: "🏆 Sports Predictions",                
-     7: "🧬 DeSci (Decentralized Science)",     
-     8: "🌐 Social & Indexing",                 
-     9: "📣 Marketing & Discovery Platforms",   
-    10: "❓ Unknown & For Sale",                
-    11: "🚫 Not Active (DO NOT BUY)"           
+categories_display = {
+     0: "🌱 Root",
+     1: "🧠 AI Data, Training, Inference",
+     2: "🖥️ Compute, Storage, Infrastructure",
+     3: "📈 Trading and Yield",
+     4: "🎨 Generative AI",
+     5: "👨‍💻 Coding and AI Agents",
+     6: "🏆 Sports Predictions",
+     7: "🧬 DeSci (Decentralized Science)",
+     8: "🌐 Social & Indexing",
+     9: "📣 Marketing & Discovery Platforms",
+    10: "❓ Unknown & For Sale",
+    11: "🚫 Not Active (DO NOT BUY)"
 }
+
+for i in range(len(categories_display)):
+    print(f"{i:>2}: {categories_display[i]}")
 
 disallowed_categories = [11]
 
