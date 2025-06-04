@@ -196,14 +196,14 @@ This script helps you automatically stake a chosen amount of TAO across all subn
 
 1. **Clone this repository**
 ```
-git clone https://github.com/yourusername/bittensor-stake-by-category.git
+git clone https://github.com/TidalWavesNode/dTAO_Cats.git
 ```
 ```
-cd bittensor-stake-by-category
+cd dTAO_Cats
 ```
 1. Run the script
 ```
-python3 stake_by_category_display_11.py
+python3 stake_by_category.py
 ```
 
 3. Follow the prompts
