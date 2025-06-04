@@ -1,7 +1,5 @@
 # This script helps you automatically stake a chosen amount of TAO across all subnets in a selected category.
 
-## 🛠️ How to Use the TAO Staking Script
-
 ## 📚 Table of Contents
 
 - [📋 Requirements](#-requirements)
@@ -21,6 +19,8 @@
   - [#9 📣 Marketing & Discovery Platforms](#9--marketing--discovery-platforms)
   - [#10 ❓ Unknown & For Sale](#10--unknown--for-sale)
   - [#11 🚫 Not Active (DO NOT BUY)](#11--not-active-do-not-buy)
+
+## 🛠️ How to Use the TAO Staking Script
 
 ### 📋 Requirements
 
