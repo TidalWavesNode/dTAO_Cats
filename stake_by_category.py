@@ -1,11 +1,10 @@
-
 import re
 import subprocess
 import getpass
 from datetime import datetime
 
 # All categories (including #11 for display, but not selectable)
-categories_display = {
+categories = {
      0: "🌱 Root",
      1: "🧠 AI Data, Training, Inference",
      2: "🖥️ Compute, Storage, Infrastructure",
@@ -20,9 +19,7 @@ categories_display = {
     11: "🚫 Not Active (DO NOT BUY)"
 }
 
-for i in range(len(categories_display)):
-    print(f"{i:>2}: {categories_display[i]}")
-
+# Disallow staking in this category
 disallowed_categories = [11]
 
 def extract_category_subnets(readme_path):
@@ -72,10 +69,6 @@ def stake(wallet, uid, amount, password, log_file):
             rate_match = re.search(r"(\d+\.\d+) τ/α", output)
             if rate_match:
                 rate = rate_match.group(1)
-        if "used" in output and "TAO" in output:
-            tao_match = re.search(r"used ([\d.]+) TAO", output)
-            if tao_match:
-                amount = tao_match.group(1)
         if "slippage" in output:
             slip_match = re.search(r"slippage[ :]+([\d.]+)%?", output)
             if slip_match:
@@ -88,10 +81,9 @@ def stake(wallet, uid, amount, password, log_file):
 
 def main():
     print("📊 Bittensor TAO Staking Assistant")
-    print("Choose an investment category:")
-
-    for k, v in categories.items():
-        print(f"{k}: {v}")
+    print("Choose an investment category:\n")
+    for k in sorted(categories.keys()):
+        print(f"{k:>2}: {categories[k]}")
 
     category = int(input("\nEnter category number: "))
     if category in disallowed_categories:
