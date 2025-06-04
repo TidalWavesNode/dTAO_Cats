@@ -44,11 +44,14 @@ Confirm and stake.
 
 ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
+
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
-🧠 This is not financial advice. Always do your research before staking or investing in any subnet.
+
+🧠 This is not financial advice. Always do your own research before staking or investing in any subnet.
+
 ⚙️ Use this script and associated tools at your own risk. The authors make no guarantees regarding accuracy, uptime, or rewards.
+
 🔐 Always verify wallet addresses and security practices when interacting with the Bittensor network or any blockchain system.
-You are solely responsible for using this software. Proceed with caution.
 
 ---
 
@@ -237,10 +240,13 @@ A categorized reference of Bittensor subnets.
 
 ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
+
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
-🧠 This is not financial advice. Always do your research before staking or investing in any subnet.
+
+🧠 This is not financial advice. Always do your own research before staking or investing in any subnet.
+
 ⚙️ Use this script and associated tools at your own risk. The authors make no guarantees regarding accuracy, uptime, or rewards.
+
 🔐 Always verify wallet addresses and security practices when interacting with the Bittensor network or any blockchain system.
-You are solely responsible for using this software. Proceed with caution.
 
 ---
