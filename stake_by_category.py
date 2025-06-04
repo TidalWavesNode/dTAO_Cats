@@ -75,7 +75,7 @@ def stake(wallet_name, password, uid, amount):
         log_entry(f"UID: {uid} | EXCEPTION | TAO Used: {amount}")
 
 def main():
-    print("📊 Bittensor TAO Staking Assistant\nChoose an investment category:\n")
+    print("📊 Bittensor TAO Staking Assistant\nChoose a subnet category:\n")
     for k, v in categories.items():
         print(f" {k:>2}: {v}")
     try:
