@@ -10,7 +10,7 @@ categories = {
      2: "🖥️ Compute, Storage, Infrastructure",
      3: "📈 Trading and Yield",
      4: "🎨 Generative AI",
-     5: "🧑‍🔬 Coding and AI Agents",
+     5: "💡 Coding and AI Agents",
      6: "🏆 Sports Predictions",
      7: "🧬 DeSci (Decentralized Science)",
      8: "🌐 Social & Indexing",
