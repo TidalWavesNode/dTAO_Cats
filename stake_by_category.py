@@ -6,18 +6,18 @@ from datetime import datetime
 
 # All categories (including #11 for display, but not selectable)
 categories = {
-    0: "🌱 Root",
-    1: "🧠 AI Data, Training, Inference",
-    2: "🖥️ Compute, Storage, Infrastructure",
-    3: "📈 Trading and Yield",
-    4: "🎨 Generative AI",
-    5: "👨‍💻 Coding and AI Agents",
-    6: "🏆 Sports Predictions",
-    7: "🧬 DeSci (Decentralized Science)",
-    8: "🌐 Social & Indexing",
-    9: "📣 Marketing & Discovery Platforms",
-    10: "❓ Unknown & For Sale",
-    11: "🚫 Not Active (DO NOT BUY)"
+     0: "🌱 Root",                               
+     1: "🧠 AI Data, Training, Inference",       
+     2: "🖥️ Compute, Storage, Infrastructure",   
+     3: "📈 Trading and Yield",                 
+     4: "🎨 Generative AI",                     
+     5: "👨‍💻 Coding and AI Agents",             
+     6: "🏆 Sports Predictions",                
+     7: "🧬 DeSci (Decentralized Science)",     
+     8: "🌐 Social & Indexing",                 
+     9: "📣 Marketing & Discovery Platforms",   
+    10: "❓ Unknown & For Sale",                
+    11: "🚫 Not Active (DO NOT BUY)"           
 }
 
 disallowed_categories = [11]
