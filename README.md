@@ -1,3 +1,57 @@
+## 🛠️ How to Use the TAO Staking Script
+
+This script helps you automatically stake a chosen amount of TAO across all subnets in a selected category.
+
+### 📋 Requirements
+
+- Python 3.7+
+- `btcli` installed and in your `$PATH`
+- This `README.md` must be present in the same folder as the script
+
+### 🚀 Quick Start
+
+1. Install prereqs
+```
+sudo apt update
+sudo apt install python3 python3-pip -y
+```
+
+2. **Clone this repository**
+```
+git clone https://github.com/TidalWavesNode/dTAO_Cats.git
+```
+```
+cd dTAO_Cats
+```
+3. Run the script
+```
+python3 stake_by_category.py
+```
+
+4. Follow the prompts
+Choose a category (0–10)
+*Category 11 is shown for reference only and cannot be selected.
+Enter wallet name and password.
+Enter the total TAO to distribute equally across all subnets in the chosen category.
+Confirm and stake.
+
+📁 Example Log Output
+```
+=== Staking Log - 2025-06-04T15:21:12Z ===
+2025-06-04T15:21:13Z | UID: 1 | Alpha: 0.3745 | TAO Used: 0.11400000 | Rate: 0.3041 τ/α | Slippage: 0.4%
+```
+---
+
+⚠️ Disclaimer
+This project is experimental and intended for educational and testing purposes only.
+🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
+🧠 This is not financial advice. Always do your research before staking or investing in any subnet.
+⚙️ Use this script and associated tools at your own risk. The authors make no guarantees regarding accuracy, uptime, or rewards.
+🔐 Always verify wallet addresses and security practices when interacting with the Bittensor network or any blockchain system.
+You are solely responsible for using this software. Proceed with caution.
+
+---
+
 # 🌐 Bittensor Subnet Directory
 
 A categorized reference of Bittensor subnets.
@@ -181,49 +235,6 @@ A categorized reference of Bittensor subnets.
 
 ---
 
-## 🛠️ How to Use the TAO Staking Script
-
-This script helps you automatically stake a chosen amount of TAO across all subnets in a selected category.
-
-### 📋 Requirements
-
-- Python 3.7+
-- `btcli` installed and in your `$PATH`
-- This `README.md` must be present in the same folder as the script
-
-### 🚀 Quick Start
-
-1. Install prereqs
-```
-sudo apt update
-sudo apt install python3 python3-pip -y
-```
-
-2. **Clone this repository**
-```
-git clone https://github.com/TidalWavesNode/dTAO_Cats.git
-```
-```
-cd dTAO_Cats
-```
-3. Run the script
-```
-python3 stake_by_category.py
-```
-
-4. Follow the prompts
-Choose a category (0–10)
-*Category 11 is shown for reference only and cannot be selected.
-Enter wallet name and password.
-Enter the total TAO to distribute equally across all subnets in the chosen category.
-Confirm and stake.
-
-📁 Example Log Output
-```
-=== Staking Log - 2025-06-04T15:21:12Z ===
-2025-06-04T15:21:13Z | UID: 1 | Alpha: 0.3745 | TAO Used: 0.11400000 | Rate: 0.3041 τ/α | Slippage: 0.4%
-```
-
 ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
@@ -231,3 +242,5 @@ This project is experimental and intended for educational and testing purposes o
 ⚙️ Use this script and associated tools at your own risk. The authors make no guarantees regarding accuracy, uptime, or rewards.
 🔐 Always verify wallet addresses and security practices when interacting with the Bittensor network or any blockchain system.
 You are solely responsible for using this software. Proceed with caution.
+
+---
