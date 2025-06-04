@@ -26,13 +26,20 @@ def extract_category_subnets(readme_path):
     with open(readme_path, 'r') as f:
         content = f.read()
 
-    pattern = r"## #(\d+)\s+([^\n]+)\n\n\| UID \| Subnet Name\s+\|\n\|[-\s]+\|\n((?:\| \d+\s+\|.*?\|\n)+)"
+    pattern = r"## #(\d+)\s+([^\n]+)\n+(\| UID \| Subnet Name[^\n]*\n\|[-\s]+\|\n(?:\|.*\|\n?)+)"
     matches = re.findall(pattern, content)
 
     categories_subnets = {}
-    for cat_num, cat_name, table in matches:
-        uids = [int(line.split('|')[1].strip()) for line in table.strip().split('\n')]
-        categories_subnets[int(cat_num)] = uids
+for cat_num, cat_name, table in matches:
+    uids = []
+    for line in table.strip().split("\n"):
+        if line.startswith("|") and line.count("|") >= 3 and "UID" not in line:
+            try:
+                uid = int(line.split("|")[1].strip())
+                uids.append(uid)
+            except:
+                continue
+    categories_subnets[int(cat_num)] = uids
 
     return categories_subnets
 
