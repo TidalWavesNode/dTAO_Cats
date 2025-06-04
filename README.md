@@ -12,7 +12,7 @@
   - [#2 🖥️ Compute, Storage, Infrastructure](#2--compute-storage-infrastructure)
   - [#3 📈 Trading and Yield](#3--trading-and-yield)
   - [#4 🎨 Generative AI](#4--generative-ai)
-  - [#5 👨‍💻 Coding and AI Agents](#5--coding-and-ai-agents)
+  - [#5 💡 Coding and AI Agents](#5--coding-and-ai-agents)
   - [#6 🏆 Sports Predictions](#6--sports-predictions)
   - [#7 🧬 DeSci (Decentralized Science)](#7--desci-decentralized-science)
   - [#8 🌐 Social & Indexing](#8--social--indexing)
