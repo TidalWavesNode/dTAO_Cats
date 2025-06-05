@@ -46,7 +46,7 @@ def parse_subnets_from_readme():
         print(f"❌ {README_FILE} not found.")
         sys.exit(1)
 
-    with open(README_FILE, "r") as f:
+    with open(README_FILE, "r", encoding="utf-8") as f:
         content = f.read()
 
     pattern = r"## #(\d+)\s+([^\n]+?)\n+\| UID \| Subnet Name[\s\|\-]+\n((?:\|[^\n]*\n)+)"
@@ -124,38 +124,38 @@ def main():
     print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
     print("    Category #{} — {}".format(choice, categories[choice]))
 
-    # Show all subnet names under the selected category
+    # Read subnet names from README for confirmation display
     subnet_lines = []
-with open(README_FILE, "r", encoding="utf-8") as f:
-    lines = f.readlines()
+    with open(README_FILE, "r", encoding="utf-8") as f:
+        lines = f.readlines()
 
-# Build a normalized header to find
-header_prefix = f"## #{choice}"
-start = end = None
+    header_prefix = f"## #{choice}"
+    start = end = None
 
-for i, line in enumerate(lines):
-    if line.strip().startswith(header_prefix):
-        start = i
-        continue
-    if start is not None and line.strip().startswith("## #") and i > start:
-        end = i
-        break
+    for i, line in enumerate(lines):
+        if line.strip().startswith(header_prefix):
+            start = i
+            continue
+        if start is not None and line.strip().startswith("## #") and i > start:
+            end = i
+            break
 
-if start is not None:
-    table_lines = lines[start:end]
-    for line in table_lines:
-        if "|" in line and line.count("|") >= 2 and "UID" not in line:
-            parts = [p.strip() for p in line.split("|")]
-            if len(parts) >= 3 and parts[1].isdigit():
-                subnet_lines.append(f"        UID {parts[1]}: {parts[2]}")
+    if start is not None:
+        table_lines = lines[start:end]
+        for line in table_lines:
+            if "|" in line and line.count("|") >= 2 and "UID" not in line:
+                parts = [p.strip() for p in line.split("|")]
+                if len(parts) >= 3 and parts[1].isdigit():
+                    subnet_lines.append(f"        UID {parts[1]}: {parts[2]}")
 
-if subnet_lines:
-    print("    Subnets:")
-    for subnet in subnet_lines:
-        print(subnet)
-else:
-    print("    Subnets: (not found)")
+    if subnet_lines:
+        print("    Subnets:")
+        for subnet in subnet_lines:
+            print(subnet)
+    else:
+        print("    Subnets: (not found)")
 
+    # Confirmations
     if input("✅ Confirm? (yes/no): ").lower() != "yes":
         return
     if input("🛑 Final confirmation — proceed with staking? (yes/no): ").lower() != "yes":
