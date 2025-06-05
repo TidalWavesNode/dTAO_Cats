@@ -2,11 +2,11 @@
 
 ## 📚 Table of Contents
 
-- [🛠️ How to Use the TAO Staking Script](#️-how-to-use-the-tao-staking-script)
-  - [📋 Requirements](#-requirements)
-  - [🚀 Quick Start](#-quick-start)
-  - [📁 Example Log Output](#-example-log-output)
-  - [⚠️ Disclaimer](#-disclaimer)
+- [How to Use the TAO Staking Script](#how-to-use-the-tao-staking-script)
+  - [Requirements](#requirements)
+  - [Quick Start](#quick-start)
+  - [Example Log Output](#example-log-output)
+  - [Disclaimer](#disclaimer)
 - [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
    - [#0 🌱 Root](#0--root)
    - [#1 🧿 Ch3RNØbØG's Picks](#1--ch3rnøbøgs-picks)
