@@ -60,11 +60,15 @@ python3 stake_by_category.py
 ```
 
 4. Follow the prompts
+   
 Choose a category (0–26) or multiple categories comma-separated ie. 1, 6, 15
 *Category 27 is shown for reference only and cannot be selected.
+
 Enter wallet name and password.
+
 Enter the total TAO to distribute equally across all subnets in the chosen category.
-Confirm and stake.
+
+Confirm to stake.
 
 📁 Example Log Output
 ```
