@@ -121,8 +121,8 @@ def main():
         print("❌ Invalid amount.")
         return
 
-    print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
-    print("    Category #{} — {}".format(choice, categories[choice]))
+print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
+print("    Category #{} — {}".format(choice, categories[choice]))
 
 subnet_lines = []
 with open(README_FILE, "r") as f:
@@ -151,10 +151,9 @@ if subnet_lines:
         print(subnet)
 else:
     print("    Subnets: (not found)")
-    if input("✅ Confirm? (yes/no): ").lower() != "yes":
-        return
-    if input("🛑 Final confirmation — proceed with staking? (yes/no): ").lower() != "yes":
-        return
+
+if input("✅ Confirm? (yes/no): ").lower() != "yes":
+    return
 
     amount_each = total_tao / len(subnets)
     print("📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(subnets)))
