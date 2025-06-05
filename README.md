@@ -10,9 +10,7 @@
   - [📁 Example Log Output](#-example-log-output)
   - [⚠️ Disclaimer](#%EF%B8%8F-disclaimer)
 
-### Bittensor Subnet Categories
-
-- [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
+### - [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
 
 ---
 
