@@ -9,35 +9,36 @@ import re
 README_FILE = "README.md"
 LOG_FILE = "staking_log.txt"
 
-# All categories (including #26 for display, but not selectable)
+# All categories (including #27 for display, but not selectable)
 categories = {
     0:  "🌱 Root",
-    1:  "🧊 3D",
-    2:  "🌟 Agents",
-    3:  "💻 Code",
-    4:  "💾 Compute",
-    5:  "🔐 Cryptography",
-    6:  "📊 Data",
-    7:  "💲 DeFi",
-    8:  "🧬 DeSci",
-    9:  "🕵️  Detection",
-    10: "🧠 Inference",
-    11: "🛠️  Infra",
-    12: "🌀 Latent Holdings",
-    13: "🌌 Macrocosmos",
-    14: "📣 Marketing",
-    15: "🎥 Multimodal",
-    16: "⚙️  Nickel5",
-    17: "🔮 Prediction",
-    18: "🧪 Rayon Labs",
-    19: "🛡️  Security",
-    20: "🏅 Sports",
-    21: "💾 Storage",
-    22: "📈 Trading",
-    23: "🧐 Training",
-    24: "🧹 Yuma",
-    25: "❓ Unknown & For Sale",
-    26: "❌ Not Active (DO NOT BUY)"
+    1:  "🧿 Ch3RNØbØG's Picks",
+    2:  "🧊 3D",
+    3:  "🌟 Agents",
+    4:  "💻 Code",
+    5:  "💾 Compute",
+    6:  "🔐 Cryptography",
+    7:  "📊 Data",
+    8:  "💲 DeFi",
+    9:  "🧬 DeSci",
+    10: "🕵️ Detection",
+    11: "🧠 Inference",
+    12: "🛠️ Infra",
+    13: "🌀 Latent Holdings",
+    14: "🌌 Macrocosmos",
+    15: "📣 Marketing",
+    16: "🎥 Multimodal",
+    17: "⚙️ Nickel5",
+    18: "🔮 Prediction",
+    19: "🧪 Rayon Labs",
+    20: "🛡️ Security",
+    21: "🏅 Sports",
+    22: "💾 Storage",
+    23: "📈 Trading",
+    24: "🧐 Training",
+    25: "🧹 Yuma",
+    26: "❓ Unknown & For Sale",
+    27: "❌ Not Active (DO NOT BUY)"
 }
 
 def parse_subnets_from_readme():
@@ -102,7 +103,7 @@ def main():
     if choice not in categories:
         print("❌ Invalid category.")
         return
-    if choice == 26:
+    if choice == 27:
         print("🚫 This category is not active.")
         return
 
