@@ -126,32 +126,35 @@ def main():
 
     # Show all subnet names under the selected category
     subnet_lines = []
-    with open(README_FILE, "r") as f:
-        lines = f.readlines()
+with open(README_FILE, "r", encoding="utf-8") as f:
+    lines = f.readlines()
 
-    category_heading = f"## #{choice} {categories[choice].split(maxsplit=1)[-1]}"
-    start = end = None
-    for i, line in enumerate(lines):
-        if line.strip().startswith(category_heading):
-            start = i
-        elif start is not None and line.strip().startswith("## #"):
-            end = i
-            break
+# Build a normalized header to find
+header_prefix = f"## #{choice}"
+start = end = None
 
-    if start is not None:
-        table_lines = lines[start:end]
-        for line in table_lines:
-            if "|" in line and line.count("|") >= 2 and "UID" not in line:
-                parts = [p.strip() for p in line.split("|")]
-                if len(parts) >= 3 and parts[1].isdigit():
-                    subnet_lines.append(f"        UID {parts[1]}: {parts[2]}")
+for i, line in enumerate(lines):
+    if line.strip().startswith(header_prefix):
+        start = i
+        continue
+    if start is not None and line.strip().startswith("## #") and i > start:
+        end = i
+        break
 
-    if subnet_lines:
-        print("    Subnets:")
-        for subnet in subnet_lines:
-            print(subnet)
-    else:
-        print("    Subnets: (not found)")
+if start is not None:
+    table_lines = lines[start:end]
+    for line in table_lines:
+        if "|" in line and line.count("|") >= 2 and "UID" not in line:
+            parts = [p.strip() for p in line.split("|")]
+            if len(parts) >= 3 and parts[1].isdigit():
+                subnet_lines.append(f"        UID {parts[1]}: {parts[2]}")
+
+if subnet_lines:
+    print("    Subnets:")
+    for subnet in subnet_lines:
+        print(subnet)
+else:
+    print("    Subnets: (not found)")
 
     if input("✅ Confirm? (yes/no): ").lower() != "yes":
         return
