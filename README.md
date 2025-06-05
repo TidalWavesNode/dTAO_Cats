@@ -8,7 +8,7 @@
   - [📋 Requirements](#-requirements)
   - [🚀 Quick Start](#-quick-start)
   - [📁 Example Log Output](#-example-log-output)
-  - [⚠️ Disclaimer](#-disclaimer)
+  - [⚠️ Disclaimer](#%EF%B8%8F-disclaimer)
     
 - [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
   - [#0 🌱 Root](#0--root)  
