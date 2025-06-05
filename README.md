@@ -2,44 +2,50 @@
 
 ## 📚 Table of Contents
 
-- [#0 🌱 Root](#0--root)
-- [#1 🧿 Ch3RNØbØG's Picks](#1--ch3rnøbøgs-picks)
-- [#2 🧊 3D](#2--3d)
-- [#3 🌟 Agents](#3--agents)
-- [#4 💻 Code](#4--code)
-- [#5 💾 Compute](#5--compute)
-- [#6 🔐 Cryptography](#6--cryptography)
-- [#7 📊 Data](#7--data)
-- [#8 💲 DeFi](#8--defi)
-- [#9 🧬 DeSci](#9--desci)
-- [#10 🕵️ Detection](#10--detection)
-- [#11 🧠 Inference](#11--inference)
-- [#12 🛠️ Infra](#12--infra)
-- [#13 🌀 Latent Holdings](#13--latent-holdings)
-- [#14 🌌 Macrocosmos](#14--macrocosmos)
-- [#15 📣 Marketing](#15--marketing)
-- [#16 🎥 Multimodal](#16--multimodal)
-- [#17 ⚙️ Nickel5](#17--nickel5)
-- [#18 🔮 Prediction](#18--prediction)
-- [#19 🧪 Rayon Labs](#19--rayon-labs)
-- [#20 🛡️ Security](#20--security)
-- [#21 🏅 Sports](#21--sports)
-- [#22 💾 Storage](#22--storage)
-- [#23 📈 Trading](#23--trading)
-- [#24 🧐 Training](#24--training)
-- [#25 🧹 Yuma](#25--yuma)
-- [#26 ❓ Unknown & For Sale](#26--unknown--for-sale)
-- [#27 ❌ Not Active (DO NOT BUY)](#27--not-active-do-not-buy)
+- [🛠️ How to Use the TAO Staking Script](#️-how-to-use-the-tao-staking-script)
+  - [📋 Requirements](#📋-requirements)
+  - [🚀 Quick Start](#🚀-quick-start)
+  - [📁 Example Log Output](#📁-example-log-output)
+  - [⚠️ Disclaimer](#⚠️-disclaimer)
+- [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
+   - [#0 🌱 Root](#0--root)
+   - [#1 🧿 Ch3RNØbØG's Picks](#1--ch3rnøbøgs-picks)
+   - [#2 🧊 3D](#2--3d)
+   - [#3 🌟 Agents](#3--agents)
+   - [#4 💻 Code](#4--code)
+   - [#5 💾 Compute](#5--compute)
+   - [#6 🔐 Cryptography](#6--cryptography)
+   - [#7 📊 Data](#7--data)
+   - [#8 💲 DeFi](#8--defi)
+   - [#9 🧬 DeSci](#9--desci)
+   - [#10 🕵️ Detection](#10--detection)
+   - [#11 🧠 Inference](#11--inference)
+   - [#12 🛠️ Infra](#12--infra)
+   - [#13 🌀 Latent Holdings](#13--latent-holdings)
+   - [#14 🌌 Macrocosmos](#14--macrocosmos)
+   - [#15 📣 Marketing](#15--marketing)
+   - [#16 🎥 Multimodal](#16--multimodal)
+   - [#17 ⚙️ Nickel5](#17--nickel5)
+   - [#18 🔮 Prediction](#18--prediction)
+   - [#19 🧪 Rayon Labs](#19--rayon-labs)
+   - [#20 🛡️ Security](#20--security)
+   - [#21 🏅 Sports](#21--sports)
+   - [#22 💾 Storage](#22--storage)
+   - [#23 📈 Trading](#23--trading)
+   - [#24 🧐 Training](#24--training)
+   - [#25 🧹 Yuma](#25--yuma)
+   - [#26 ❓ Unknown & For Sale](#26--unknown--for-sale)
+   - [#27 ❌ Not Active (DO NOT BUY)](#27--not-active-do-not-buy)
 
 ## 🛠️ How to Use the TAO Staking Script
 
-### 📋 Requirements
+## 📋 Requirements
 
 - Python 3.7+
 - `btcli` installed and in your `$PATH`
 - This `README.md` must be present in the same folder as the script
 
-### 🚀 Quick Start
+## 🚀 Quick Start
 
 1. Install prereqs
 ```
@@ -77,7 +83,7 @@ Confirm to stake.
 ```
 ---
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
 
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
