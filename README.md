@@ -39,7 +39,7 @@
 
 ### 📋 Requirements
 
-- Python 3.7+
+- Python 3.9+
 - `btcli` installed and in your `$PATH`
 - This `README.md` must be present in the same folder as the script
 
