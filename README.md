@@ -72,6 +72,7 @@ python3 stake_by_category.py
 4. Follow the prompts
    
 Choose a category (0–26) or multiple categories comma-separated ie. 1, 6, 15
+
 *Category 27 is shown for reference only and cannot be selected.
 
 Enter wallet name and password.
