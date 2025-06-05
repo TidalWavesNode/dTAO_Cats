@@ -121,39 +121,42 @@ def main():
         print("❌ Invalid amount.")
         return
 
-print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
-print("    Category #{} — {}".format(choice, categories[choice]))
+    print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
+    print("    Category #{} — {}".format(choice, categories[choice]))
 
-subnet_lines = []
-with open(README_FILE, "r") as f:
-    lines = f.readlines()
+    # Show all subnet names under the selected category
+    subnet_lines = []
+    with open(README_FILE, "r") as f:
+        lines = f.readlines()
 
-category_heading = f"## #{choice} {categories[choice].split(maxsplit=1)[-1]}"
-start = end = None
-for i, line in enumerate(lines):
-    if line.strip().startswith(category_heading):
-        start = i
-    elif start is not None and line.strip().startswith("## #"):
-        end = i
-        break
+    category_heading = f"## #{choice} {categories[choice].split(maxsplit=1)[-1]}"
+    start = end = None
+    for i, line in enumerate(lines):
+        if line.strip().startswith(category_heading):
+            start = i
+        elif start is not None and line.strip().startswith("## #"):
+            end = i
+            break
 
-if start is not None:
-    table_lines = lines[start:end]
-    for line in table_lines:
-        if "|" in line and line.count("|") >= 2 and "UID" not in line:
-            parts = [p.strip() for p in line.split("|")]
-            if len(parts) >= 3 and parts[1].isdigit():
-                subnet_lines.append(f"        UID {parts[1]}: {parts[2]}")
+    if start is not None:
+        table_lines = lines[start:end]
+        for line in table_lines:
+            if "|" in line and line.count("|") >= 2 and "UID" not in line:
+                parts = [p.strip() for p in line.split("|")]
+                if len(parts) >= 3 and parts[1].isdigit():
+                    subnet_lines.append(f"        UID {parts[1]}: {parts[2]}")
 
-if subnet_lines:
-    print("    Subnets:")
-    for subnet in subnet_lines:
-        print(subnet)
-else:
-    print("    Subnets: (not found)")
+    if subnet_lines:
+        print("    Subnets:")
+        for subnet in subnet_lines:
+            print(subnet)
+    else:
+        print("    Subnets: (not found)")
 
-if input("✅ Confirm? (yes/no): ").lower() != "yes":
-    return
+    if input("✅ Confirm? (yes/no): ").lower() != "yes":
+        return
+    if input("🛑 Final confirmation — proceed with staking? (yes/no): ").lower() != "yes":
+        return
 
     amount_each = total_tao / len(subnets)
     print("📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(subnets)))
