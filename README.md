@@ -224,7 +224,6 @@ A categorized reference of Bittensor subnets.
 
 | UID | Subnet Name             |
 |-----|-------------------------|
-| 7   | SubVortex               |
 | 65  | TAO Private Network     |
 | 97  | FlameWire               |
 
