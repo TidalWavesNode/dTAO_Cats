@@ -2,38 +2,34 @@
 
 ## 📚 Table of Contents
 
-- [📋 Requirements](#-requirements)
-- [🚀 Quick Start](#-quick-start)
-- [📁 Example Log Output](#-example-log-output)
-- [⚠️ Disclaimer](#️-disclaimer)
-- [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
-  - [#0 🌱 Root](#0--root)
-  - [#1 🧊 3D](#1--3d)
-  - [#2 🌟 Agents](#2--agents)
-  - [#3 💻 Code](#3--code)
-  - [#4 💾 Compute](#4--compute)
-  - [#5 🔐 Cryptography](#5--cryptography)
-  - [#6 📊 Data](#6--data)
-  - [#7 💲 DeFi](#7--defi)
-  - [#8 🧬 DeSci](#8--desci)
-  - [#9 🕵️ Detection](#9--detection)
-  - [#10 🧠 Inference](#10--inference)
-  - [#11 🛠️ Infra](#11--infra)
-  - [#12 🌀 Latent Holdings](#12--latent-holdings)
-  - [#13 🌌 Macrocosmos](#13--macrocosmos)
-  - [#14 📣 Marketing](#14--marketing)
-  - [#15 🎥 Multimodal](#15--multimodal)
-  - [#16 ⚙️ Nickel5](#16--nickel5)
-  - [#17 🔮 Prediction](#17--prediction)
-  - [#18 🧪 Rayon Labs](#18--rayon-labs)
-  - [#19 🛡️ Security](#19--security)
-  - [#20 🏅 Sports](#20--sports)
-  - [#21 💾 Storage](#21--storage)
-  - [#22 📈 Trading](#22--trading)
-  - [#23 🧐 Training](#23--training)
-  - [#24 🧹 Yuma](#24--yuma)
-  - [#25 ❓ Unknown & For Sale](#25--unknown--for-sale)
-  - [#26 ❌ Not Active (DO NOT BUY)](#26--not-active-do-not-buy)
+- [#0 🌱 Root](#0--root)
+- [#1 🧿 Ch3RNØbØG's Picks](#1--ch3rnøbøgs-picks)
+- [#2 🧊 3D](#2--3d)
+- [#3 🌟 Agents](#3--agents)
+- [#4 💻 Code](#4--code)
+- [#5 💾 Compute](#5--compute)
+- [#6 🔐 Cryptography](#6--cryptography)
+- [#7 📊 Data](#7--data)
+- [#8 💲 DeFi](#8--defi)
+- [#9 🧬 DeSci](#9--desci)
+- [#10 🕵️ Detection](#10--detection)
+- [#11 🧠 Inference](#11--inference)
+- [#12 🛠️ Infra](#12--infra)
+- [#13 🌀 Latent Holdings](#13--latent-holdings)
+- [#14 🌌 Macrocosmos](#14--macrocosmos)
+- [#15 📣 Marketing](#15--marketing)
+- [#16 🎥 Multimodal](#16--multimodal)
+- [#17 ⚙️ Nickel5](#17--nickel5)
+- [#18 🔮 Prediction](#18--prediction)
+- [#19 🧪 Rayon Labs](#19--rayon-labs)
+- [#20 🛡️ Security](#20--security)
+- [#21 🏅 Sports](#21--sports)
+- [#22 💾 Storage](#22--storage)
+- [#23 📈 Trading](#23--trading)
+- [#24 🧐 Training](#24--training)
+- [#25 🧹 Yuma](#25--yuma)
+- [#26 ❓ Unknown & For Sale](#26--unknown--for-sale)
+- [#27 ❌ Not Active (DO NOT BUY)](#27--not-active-do-not-buy)
 
 ## 🛠️ How to Use the TAO Staking Script
 
@@ -100,14 +96,38 @@ A categorized reference of Bittensor subnets.
 |-----|-------------------------|
 | 0   | Root                    |
 
-## #1 🧊 3D
+## #1 🧿 Ch3RNØbØG's Picks
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 5   | OpenKaito               |
+| 10  | Sturdy                  |
+| 12  | Compute Horde           |
+| 15  | Unknown                 |
+| 17  | 404GEN                  |
+| 18  | Zeus                    |
+| 31  | CANDLES                 |
+| 41  | SPORTSTENSOR            |
+| 44  | Score                   |
+| 50  | Synth                   |
+| 56  | Gradients               |
+| 57  | Gaia                    |
+| 62  | Ridges AI               |
+| 65  | TAO Private Network     |
+| 68  | NOVA                    |
+| 75  | Hippius                 |
+| 85  | Vidaio                  |
+| 96  | FLock OFF               |
+| 97  | FlameWire               |
+
+## #2 🧊 3D
 
 | UID | Subnet Name             |
 |-----|-------------------------|
 | 17  | 404GEN                  |
 | 46  | Neural3D                |
 
-## #2 🌟 Agents
+## #3 🌟 Agents
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -119,14 +139,14 @@ A categorized reference of Bittensor subnets.
 | 62  | Ridges AI               |
 | 94  | Eastworld               |
 
-## #3 💻 Code
+## #4 💻 Code
 
 | UID | Subnet Name             |
 |-----|-------------------------|
 | 45  | SWE - Rizzo             |
 | 54  | WebGenieAI              |
 
-## #4 💾 Compute
+## #5 💾 Compute
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -135,13 +155,13 @@ A categorized reference of Bittensor subnets.
 | 51  | Celium                  |
 | 64  | Chutes                  |
 
-## #5 🔐 Cryptography
+## #6 🔐 Cryptography
 
 | UID | Subnet Name             |
 |-----|-------------------------|
 | 2   | omron                   |
 
-## #6 📊 Data
+## #7 📊 Data
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -156,7 +176,7 @@ A categorized reference of Bittensor subnets.
 | 52  | Dojo                    |
 | 81  | Patrol (TAO.com)        |
 
-## #7 💲 DeFi
+## #8 💲 DeFi
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -164,7 +184,7 @@ A categorized reference of Bittensor subnets.
 | 50  | Synth                   |
 | 55  | Precog                  |
 
-## #8 🧬 DeSci
+## #9 🧬 DeSci
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -175,7 +195,7 @@ A categorized reference of Bittensor subnets.
 | 68  | NOVA                    |
 | 76  | Safe Scan               |
 
-## #9 🕵️ Detection
+## #10 🕵️ Detection
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -187,7 +207,7 @@ A categorized reference of Bittensor subnets.
 | 61  | RedTeam                 |
 | 66  | FakeNews                |
 
-## #10 🧠 Inference
+## #11 🧠 Inference
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -200,7 +220,7 @@ A categorized reference of Bittensor subnets.
 | 64  | Chutes                  |
 | 85  | Vidaio                  |
 
-## #11 🛠️ Infra
+## #12 🛠️ Infra
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -208,14 +228,14 @@ A categorized reference of Bittensor subnets.
 | 65  | TAO Private Network     |
 | 97  | FlameWire               |
 
-## #12 🌀 Latent Holdings
+## #13 🌀 Latent Holdings
 
 | UID | Subnet Name             |
 |-----|-------------------------|
 | 5   | OpenKaito               |
 | 14  | TAOHash                 |
 
-## #13 🌌 Macrocosmos
+## #14 🌌 Macrocosmos
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -225,7 +245,7 @@ A categorized reference of Bittensor subnets.
 | 25  | Mainframe               |
 | 37  | Finetuning              |
 
-## #14 📣 Marketing
+## #15 📣 Marketing
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -233,7 +253,7 @@ A categorized reference of Bittensor subnets.
 | 23  | Nuance                  |
 | 93  | Bitcast                 |
 
-## #15 🎥 Multimodal
+## #16 🎥 Multimodal
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -242,7 +262,7 @@ A categorized reference of Bittensor subnets.
 | 31  | CANDLES                 |
 | 40  | Chunking                |
 
-## #16 ⚙️ Nickel5
+## #17 ⚙️ Nickel5
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -251,7 +271,7 @@ A categorized reference of Bittensor subnets.
 | 57  | Gaia                    |
 | 63  | Alpha Trader Exchange (ATX) |
 
-## #17 🔮 Prediction
+## #18 🔮 Prediction
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -266,7 +286,7 @@ A categorized reference of Bittensor subnets.
 | 55  | Precog                  |
 | 57  | Gaia                    |
 
-## #18 🧪 Rayon Labs
+## #19 🧪 Rayon Labs
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -274,7 +294,7 @@ A categorized reference of Bittensor subnets.
 | 56  | Gradients               |
 | 64  | Chutes                  |
 
-## #19 🛡️ Security
+## #20 🛡️ Security
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -282,7 +302,7 @@ A categorized reference of Bittensor subnets.
 | 61  | RedTeam                 |
 | 81  | Patrol (TAO.com)        |
 
-## #20 🏅 Sports
+## #21 🏅 Sports
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -290,7 +310,7 @@ A categorized reference of Bittensor subnets.
 | 41  | SPORTSTENSOR            |
 | 44  | Score                   |
 
-## #21 💾 Storage
+## #22 💾 Storage
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -300,7 +320,7 @@ A categorized reference of Bittensor subnets.
 | 42  | Real-Time Data by Masa  |
 | 75  | Hippius                 |
 
-## #22 📈 Trading
+## #23 📈 Trading
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -311,7 +331,7 @@ A categorized reference of Bittensor subnets.
 | 55  | Precog                  |
 | 63  | Alpha Trader Exchange (ATX) |
 
-## #23 🧐 Training
+## #24 🧐 Training
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -326,7 +346,7 @@ A categorized reference of Bittensor subnets.
 | 56  | Gradients               |
 | 96  | FLock OFF               |
 
-## #24 🧹 Yuma
+## #25 🧹 Yuma
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -342,7 +362,7 @@ A categorized reference of Bittensor subnets.
 | 70  | Vericore                |
 | 96  | FLock OFF               |
 
-## #25 ❓ Unknown & For Sale
+## #26 ❓ Unknown & For Sale
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -358,7 +378,7 @@ A categorized reference of Bittensor subnets.
 | 102 | for sale                |
 | 104 | Unknown                 |
 
-## #26 ❌ Not Active (DO NOT BUY)
+## #27 ❌ Not Active (DO NOT BUY)
 
 | UID | Subnet Name             |
 |-----|-------------------------|
