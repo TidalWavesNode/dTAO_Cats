@@ -1,4 +1,4 @@
-# This script allows you to automatically stake a chosen amount of TAO across all subnets within a selected category.
+# This script allows you to automatically stake a chosen amount of TAO equally across all subnets within a selected category/s.
 
 ## 📚 Table of Contents
 
