@@ -38,7 +38,8 @@
   - [#24 🧐 Training](#24--training)  
   - [#25 🧹 Yuma](#25--yuma)  
   - [#26 ❓ Unknown & For Sale](#26--unknown--for-sale)  
-  - [#27 ❌ Not Active (DO NOT BUY)](#27--not-active-do-not-buy)  
+  - [#27 ❌ Not Active (DO NOT BUY)](#27--not-active-do-not-buy)
+- [⚠️ Disclaimer](#-disclaimer-1)
 
 ## 🛠️ How to Use the TAO Staking Script
 
