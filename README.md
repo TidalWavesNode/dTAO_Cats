@@ -96,7 +96,6 @@ A categorized reference of Bittensor subnets.
 | 6   | Infinite Games               |
 | 9   | iota                         |
 | 13  | Data Universe                |
-| 18  | Zeus                         |
 | 19  | Nineteen.ai                  |
 | 21  | OMEGA Any-to-Any             |
 | 24  | OMEGA Labs                   |
@@ -109,7 +108,6 @@ A categorized reference of Bittensor subnets.
 | 42  | Real-Time Data by Masa       |
 | 52  | Dojo                         |
 | 56  | Gradients                    |
-| 57  | Gaia                         |
 | 72  | StreetVision by NATIX        |
 | 80  | AI Factory                   |
 | 81  | Patrol (TAO.com)             |
@@ -194,7 +192,9 @@ A categorized reference of Bittensor subnets.
 
 | UID | Subnet Name |
 |-----|-------------|
+| 18  | Zeus        |
 | 25  | Mainframe   |
+| 57  | Gaia        |
 | 68  | NOVA        |
 | 76  | Safe Scan   |
 
