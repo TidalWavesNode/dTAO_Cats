@@ -4,11 +4,11 @@
 
 ### 🚀 Usage
 
-- [🛠️ How to Use the TAO Staking Script](#️-how-to-use-the-tao-staking-script)
-  - [📋 Requirements](#️-requirements)
-  - [🚀 Quick Start](#️-quick-start)
-  - [📁 Example Log Output](#️-example-log-output)
-  - [⚠️ Disclaimer](#️-disclaimer)
+- [How to Use the TAO Staking Script](#how-to-use-the-tao-staking-script)
+  - [Requirements](#requirements)
+  - [Quick Start](#quick-start)
+  - [Example Log Output](#example-log-output)
+  - [Disclaimer](#disclaimer)
     
 ### 🌐 Subnet Directory
 <details>
