@@ -9,7 +9,9 @@
   - [🚀 Quick Start](#-quick-start)
   - [📁 Example Log Output](#-example-log-output)
   - [⚠️ Disclaimer](#%EF%B8%8F-disclaimer)
-    
+
+### Bittensor Subnet Categories
+
 - [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
 
 ---
