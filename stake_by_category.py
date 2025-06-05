@@ -66,18 +66,19 @@ def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float):
             stderr=subprocess.PIPE,
             text=True
         )
-        stdout, stderr = proc.stdout, proc.stderr
+        stdout = proc.stdout
         captured = json.loads(stdout)
-        for netuid_ in captured:
-            for staking_address in captured[netuid_]:
-                if not captured[netuid_][staking_address]:
-                    print(f"⚠️ Error staking to UID {netuid_}")
+        for netuid_ in captured["staking_success"]:
+            for staking_address in captured["staking_success"][netuid_]:
+                if not captured["staking_success"][netuid_][staking_address]:
+                    err_msg = captured["error_messages"][netuid_][staking_address]
+                    print(f"⚠️ Error staking to UID {netuid_}: {err_msg}")
                     log_entry(f"UID: {netuid_} | FAILED | TAO Used: {amount}")
                 else:
                     log_entry(f"UID: {netuid_} | SUCCESS | TAO Used: {amount}")
     except Exception as e:
         print(f"❌ Exception: {e}")
-        log_entry(f"UID: {uid} | EXCEPTION | TAO Used: {amount}")
+        log_entry(f"UID: {','.join(str(x) for x in uids)} | EXCEPTION | TAO Used: {amount}")
 
 def main():
     print("📊 Bittensor TAO Staking Assistant\nChoose a subnet category:\n")
