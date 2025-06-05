@@ -123,6 +123,8 @@ def main():
 
     print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
     print("    Category #{} — {}".format(choice, categories[choice]))
+    subnet_names = subnets_by_cat.get(choice, {}).get("name", "")
+    print(f"    Subnets: {subnet_names}")
     if input("✅ Confirm? (yes/no): ").lower() != "yes":
         return
     if input("🛑 Final confirmation — proceed with staking? (yes/no): ").lower() != "yes":
