@@ -5,10 +5,10 @@
 ### 🚀 Usage
 
 - [🛠️ How to Use the TAO Staking Script](#️how-to-use-the-tao-staking-script)
-  - [📋 Requirements](##requirements)
-  - [🚀 Quick Start](##quick-start)
-  - [📁 Example Log Output](##example-log-output)
-  - [⚠️ Disclaimer](##disclaimer)
+  - [📋 Requirements](#-requirements)
+  - [🚀 Quick Start](#-quick-start)
+  - [📁 Example Log Output](#-example-log-output)
+  - [⚠️ Disclaimer](#-disclaimer)
     
 - 🌐 <strong>Bittensor Subnet Directory</strong> 
   - [#0 🌱 Root](#0--root)  
