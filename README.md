@@ -10,7 +10,7 @@
   - [📁 Example Log Output](#-example-log-output)
   - [⚠️ Disclaimer](#-disclaimer)
     
-- 🌐 <strong>Bittensor Subnet Directory</strong> 
+- [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
   - [#0 🌱 Root](#0--root)  
   - [#1 🧿 Ch3RNØbØG's Picks](#1--ch3rnøbøgs-picks)  
   - [#2 🧊 3D](#2--3d)  
