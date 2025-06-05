@@ -5,8 +5,8 @@ from datetime import datetime
 from pathlib import Path
 import re
 
-README_FILE = "README.md"
-LOG_FILE = "staking_log.txt"
+README_FILE = Path(__file__).parent.joinpath("README.md")
+LOG_FILE = Path(__file__).parent.joinpath("staking_log.txt")
 
 # All categories (including #11 for display, but not selectable)
 categories = {
@@ -54,7 +54,7 @@ def parse_subnets_from_readme():
 
 def log_entry(entry: str):
     now = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    with open(LOG_FILE, "a") as f:
+    with open(LOG_FILE, "a+") as f:
         f.write(f"{now} | {entry}\n")
 
 def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float):
@@ -81,6 +81,7 @@ def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float):
         log_entry(f"UID: {','.join(str(x) for x in uids)} | EXCEPTION | TAO Used: {amount}")
 
 def main():
+    subnets_by_cat = parse_subnets_from_readme()
     print("📊 Bittensor TAO Staking Assistant\nChoose a subnet category:\n")
     for k, v in categories.items():
         print(f" {k:>2}: {v}")
@@ -97,7 +98,6 @@ def main():
         print("🚫 This category is not active.")
         return
 
-    subnets_by_cat = parse_subnets_from_readme()
     subnets = subnets_by_cat.get(choice, {}).get("uids", [])
     if not subnets:
         print("⚠️ No subnets found for this category.")
