@@ -4,11 +4,11 @@
 
 ### 🚀 Usage
 
-- [How to Use the TAO Staking Script](#how-to-use-the-tao-staking-script)
-  - [Requirements](#requirements)
-  - [Quick Start](#quick-start)
-  - [Example Log Output](#example-log-output)
-  - [Disclaimer](#disclaimer)
+- [🛠️ How to Use the TAO Staking Script](#️how-to-use-the-tao-staking-script)
+  - [📋 Requirements](#requirements)
+  - [🚀 Quick Start](#quick-start)
+  - [📁 Example Log Output](#example-log-output)
+  - [⚠️ Disclaimer](#disclaimer)
     
 ### 🌐 Subnet Directory
 <details>
@@ -47,13 +47,13 @@
 
 ## 🛠️ How to Use the TAO Staking Script
 
-### 📋 Requirements
+## 📋 Requirements
 
 - Python 3.7+
 - `btcli` installed and in your `$PATH`
 - This `README.md` must be present in the same folder as the script
 
-### 🚀 Quick Start
+## 🚀 Quick Start
 
 1. Install prereqs
 ```
@@ -84,14 +84,14 @@ Enter the total TAO to distribute equally across all subnets in the chosen categ
 
 Confirm to stake.
 
-📁 Example Log Output
+## 📁 Example Log Output
 ```
 === Staking Log - 2025-06-04T15:21:12Z ===
 2025-06-04T15:21:13Z | UID: 1 | Alpha: 0.3745 | TAO Used: 0.11400000 | Rate: 0.3041 τ/α | Slippage: 0.4%
 ```
 ---
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
 
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
@@ -420,7 +420,7 @@ A categorized reference of Bittensor subnets.
 | 116 | SolMev                  |
 ---
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
 
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
