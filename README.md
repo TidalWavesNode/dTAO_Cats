@@ -47,13 +47,13 @@
 
 ## 🛠️ How to Use the TAO Staking Script
 
-## 📋 Requirements
+### 📋 Requirements
 
 - Python 3.7+
 - `btcli` installed and in your `$PATH`
 - This `README.md` must be present in the same folder as the script
 
-## 🚀 Quick Start
+### 🚀 Quick Start
 
 1. Install prereqs
 ```
@@ -91,7 +91,7 @@ Confirm to stake.
 ```
 ---
 
-## ⚠️ Disclaimer
+⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
 
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
