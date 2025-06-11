@@ -1,34 +1,71 @@
-# This script allows you to automatically stake a chosen amount of TAO across all subnets within a selected category.
+# This script allows you to automatically stake a chosen amount of TAO equally across all subnets within a selected category or categories.
 
 ## 📚 Table of Contents
 
-- [📋 Requirements](#-requirements)
-- [🚀 Quick Start](#-quick-start)
-- [📁 Example Log Output](#-example-log-output)
-- [⚠️ Disclaimer](#️-disclaimer)
-- [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
-  - [#0 🌱 Root](#0--root)
-  - [#1 🧠 AI Data, Training, Inference](#1--ai-data-training-inference)
-  - [#2 🖥️ Compute, Storage, Infrastructure](#2--compute-storage-infrastructure)
-  - [#3 📈 Trading and Yield](#3--trading-and-yield)
-  - [#4 🎨 Generative AI](#4--generative-ai)
-  - [#5 💡 Coding and AI Agents](#5--coding-and-ai-agents)
-  - [#6 🏆 Sports Predictions](#6--sports-predictions)
-  - [#7 🧬 DeSci (Decentralized Science)](#7--desci-decentralized-science)
-  - [#8 🌐 Social & Indexing](#8--social--indexing)
-  - [#9 📣 Marketing & Discovery Platforms](#9--marketing--discovery-platforms)
-  - [#10 ❓ Unknown & For Sale](#10--unknown--for-sale)
-  - [#11 🚫 Not Active (DO NOT BUY)](#11--not-active-do-not-buy)
+### - [🛠️ How to Use the TAO Staking Script](#️how-to-use-the-tao-staking-script)
+  - [📋 Requirements](#-requirements)
+  - [🚀 Quick Start](#-quick-start)
+  - [📁 Example Log Output](#-example-log-output)
+  - [⚠️ Disclaimer](#%EF%B8%8F-disclaimer)
+
+### - [🌐 Bittensor Subnet Directory](#-bittensor-subnet-directory)
+
+---
+
+- [#0  🌱 Root](#0--root)  
+
+---
+
+- [#1  🧿 Ch3RNØbØG's Picks](#1--ch3rnøbøgs-picks)  
+- [#2  🧊 3D](#2--3d)  
+- [#3  🌟 Agents](#3--agents)  
+- [#4  💻 Code](#4--code)  
+- [#5  💾 Compute](#5--compute)  
+- [#6  🔐 Cryptography](#6--cryptography)  
+- [#7  📊 Data](#7--data)  
+
+---
+
+- [#8  💲 DeFi](#8--defi)  
+- [#9  🧬 DeSci](#9--desci)  
+- [#10 🕵️ Detection](#10--detection)  
+- [#11 🧠 Inference](#11--inference)  
+- [#12 🛠️ Infra](#12--infra)  
+- [#13 🌀 Latent Holdings](#13--latent-holdings)  
+- [#14 🌌 Macrocosmos](#14--macrocosmos)  
+
+---
+
+- [#15 📣 Marketing](#15--marketing)  
+- [#16 🎥 Multimodal](#16--multimodal)  
+- [#17 ⚙️ Nickel5](#17--nickel5)  
+- [#18 🔮 Prediction](#18--prediction)  
+- [#19 🧪 Rayon Labs](#19--rayon-labs)  
+- [#20 🛡️ Security](#20--security)  
+- [#21 🏅 Sports](#21--sports)  
+
+---
+
+- [#22 💾 Storage](#22--storage)  
+- [#23 📈 Trading](#23--trading)  
+- [#24 🧐 Training](#24--training)  
+- [#25 🧹 Yuma](#25--yuma)  
+- [#26 ❓ Unknown & For Sale](#26--unknown--for-sale)  
+- [#27 ❌ Not Active (DO NOT BUY)](#27--not-active-do-not-buy)
+
+---
+
+- [⚠️ Disclaimer](#%EF%B8%8F-disclaimer-1)
 
 ## 🛠️ How to Use the TAO Staking Script
 
-### 📋 Requirements
+## 📋 Requirements
 
 - Python 3.9+
 - `btcli` installed and in your `$PATH`
 - This `README.md` must be present in the same folder as the script
 
-### 🚀 Quick Start
+## 🚀 Quick Start
 
 1. Install prereqs
 ```
@@ -49,20 +86,25 @@ python3 stake_by_category.py
 ```
 
 4. Follow the prompts
-Choose a category (0–10)
-*Category 11 is shown for reference only and cannot be selected.
-Enter wallet name and password.
-Enter the total TAO to distribute equally across all subnets in the chosen category.
-Confirm and stake.
+   
+Choose a category (0–26) or multiple categories comma-separated ie. 1, 6, 15
 
-📁 Example Log Output
+*Category 27 is shown for reference only and cannot be selected.
+
+Enter wallet name and password.
+
+Enter the total TAO to distribute equally across all subnets in the chosen category.
+
+Confirm to stake.
+
+## 📁 Example Log Output
 ```
 === Staking Log - 2025-06-04T15:21:12Z ===
 2025-06-04T15:21:13Z | UID: 1 | Alpha: 0.3745 | TAO Used: 0.11400000 | Rate: 0.3041 τ/α | Slippage: 0.4%
 ```
 ---
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
 
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.
@@ -74,7 +116,6 @@ This project is experimental and intended for educational and testing purposes o
 🔐 Always verify wallet addresses and security practices when interacting with the Bittensor network or any blockchain system.
 
 ---
-
 # 🌐 Bittensor Subnet Directory
 
 A categorized reference of Bittensor subnets.
@@ -82,157 +123,292 @@ A categorized reference of Bittensor subnets.
 ---
 ## #0 🌱 Root
 
-| UID | Subnet Name                  |
-|-----|------------------------------|
-| 0   | Root                         |
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 0   | Root                    |
 
-## #1 🧠 AI Data, Training, Inference
-
-| UID | Subnet Name                  |
-|-----|------------------------------|
-| 1   | Apex                         |
-| 3   | τemplar                      |
-| 4   | Targon                       |
-| 6   | Infinite Games               |
-| 9   | iota                         |
-| 13  | Data Universe                |
-| 18  | Zeus                         |
-| 19  | Nineteen.ai                  |
-| 21  | OMEGA Any-to-Any             |
-| 24  | OMEGA Labs                   |
-| 29  | Coldint                      |
-| 33  | ReadyAI                      |
-| 34  | BitMind                      |
-| 37  | Finetuning                   |
-| 38  | Distributed Training         |
-| 40  | Chunking                     |
-| 42  | Real-Time Data by Masa       |
-| 52  | Dojo                         |
-| 56  | Gradients                    |
-| 57  | Gaia                         |
-| 72  | StreetVision by NATIX        |
-| 80  | AI Factory                   |
-| 81  | Patrol (TAO.com)             |
-| 96  | FLock OFF                    |
-| 105 | SoundsRight                  |
-
-## #2 🖥️ Compute, Storage, Infrastructure
-
-| UID | Subnet Name           |
-|-----|-----------------------|
-| 2   | omron                 |
-| 7   | SubVortex             |
-| 12  | Compute Horde         |
-| 14  | TAOHash               |
-| 26  | Storb                 |
-| 27  | NI Compute            |
-| 39  | w.ai (Parked)         |
-| 43  | Graphite              |
-| 49  | polariscloud.ai       |
-| 51  | Celium                |
-| 64  | Chutes                |
-| 65  | TAO Private Network   |
-| 73  | merit                 |
-| 75  | Hippius               |
-| 91  | tensorprox            |
-| 97  | FlameWire             |
-
-## #3 📈 Trading and Yield
-
-| UID | Subnet Name                      |
-|-----|----------------------------------|
-| 8   | Proprietary Trading Network      |
-| 10  | Sturdy                           |
-| 31  | CANDLES                          |
-| 50  | Synth                            |
-| 53  | EfficientFrontier                |
-| 55  | Precog                           |
-| 63  | Alpha Trader Exchange (ATX)      |
-| 77  | Liquidity                        |
-| 79  | τaos                             |
-| 88  | Sταking                          |
-| 106 | Liquidity Provisioning           |
-
-## #4 🎨 Generative AI
-
-| UID | Subnet Name         |
-|-----|---------------------|
-| 11  | Dippy               |
-| 17  | 404—GEN             |
-| 32  | ItsAI               |
-| 46  | Neural3D            |
-| 58  | Dippy Speech        |
-| 70  | Vericore            |
-| 84  | Docs-Insights (Taτsu)|
-| 85  | Vidaio              |
-| 86  | MIAO                |
-
-## #5 👨‍💻 Coding and AI Agents
+## #1 🧿 Ch3RNØbØG's Picks
 
 | UID | Subnet Name             |
 |-----|-------------------------|
+| 5   | OpenKaito               |
+| 10  | Sturdy                  |
+| 12  | Compute Horde           |
+| 15  | Unknown                 |
+| 17  | 404GEN                  |
+| 18  | Zeus                    |
+| 31  | CANDLES                 |
+| 41  | SPORTSTENSOR            |
+| 44  | Score                   |
+| 50  | Synth                   |
+| 56  | Gradients               |
+| 57  | Gaia                    |
+| 62  | Ridges AI               |
+| 65  | TAO Private Network     |
+| 68  | NOVA                    |
+| 75  | Hippius                 |
+| 85  | Vidaio                  |
+| 96  | FLock OFF               |
+| 97  | FlameWire               |
+
+## #2 🧊 3D
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 17  | 404GEN                  |
+| 46  | Neural3D                |
+
+## #3 🌟 Agents
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 1   | Apex                    |
 | 20  | BitAgent - Rizzo        |
-| 35  | LogicNet                |
+| 33  | ReadyAI                 |
 | 36  | Web Agents - Autoppia   |
+| 59  | Agent Arena by Masa     |
+| 62  | Ridges AI               |
+| 94  | Eastworld               |
+
+## #4 💻 Code
+
+| UID | Subnet Name             |
+|-----|-------------------------|
 | 45  | SWE - Rizzo             |
+| 54  | WebGenieAI              |
+
+## #5 💾 Compute
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 12  | Compute Horde           |
+| 27  | NI Compute              |
+| 51  | Celium                  |
+| 64  | Chutes                  |
+
+## #6 🔐 Cryptography
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 2   | omron                   |
+
+## #7 📊 Data
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 13  | Data Universe           |
+| 22  | Desearch                |
+| 24  | OMEGA Labs              |
+| 26  | Storb                   |
+| 31  | CANDLES                 |
+| 33  | ReadyAI                 |
+| 40  | Chunking                |
+| 42  | Real-Time Data by Masa |
+| 52  | Dojo                    |
+| 81  | Patrol (TAO.com)        |
+
+## #8 💲 DeFi
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 10  | Sturdy                  |
+| 50  | Synth                   |
+| 55  | Precog                  |
+
+## #9 🧬 DeSci
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 18  | Zeus                    |
+| 25  | Mainframe               |
+| 31  | CANDLES                 |
+| 57  | Gaia                    |
+| 68  | NOVA                    |
+| 76  | Safe Scan               |
+
+## #10 🕵️ Detection
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 22  | Desearch                |
+| 32  | ItsAI                   |
+| 34  | BitMind                 |
+| 44  | Score                   |
+| 60  | Bitsec.ai               |
+| 61  | RedTeam                 |
+| 66  | FakeNews                |
+
+## #11 🧠 Inference
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 2   | omron                   |
+| 4   | Targon                  |
+| 19  | Nineteen.ai             |
+| 35  | LogicNet                |
+| 43  | Graphite                |
+| 58  | Dippy Speech            |
+| 64  | Chutes                  |
+| 85  | Vidaio                  |
+
+## #12 🛠️ Infra
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 65  | TAO Private Network     |
+| 97  | FlameWire               |
+
+## #13 🌀 Latent Holdings
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 5   | OpenKaito               |
+| 14  | TAOHash                 |
+
+## #14 🌌 Macrocosmos
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 1   | Apex                    |
+| 9   | iota                    |
+| 13  | Data Universe           |
+| 25  | Mainframe               |
+| 37  | Finetuning              |
+
+## #15 📣 Marketing
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 16  | BitAds                  |
+| 23  | Nuance                  |
+| 93  | Bitcast                 |
+
+## #16 🎥 Multimodal
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 21  | OMEGA Any-to-Any        |
+| 24  | OMEGA Labs              |
+| 31  | CANDLES                 |
+| 40  | Chunking                |
+
+## #17 ⚙️ Nickel5
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 30  | Bettensor               |
+| 48  | NextPlace               |
+| 57  | Gaia                    |
+| 63  | Alpha Trader Exchange (ATX) |
+
+## #18 🔮 Prediction
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 6   | Infinite Games          |
+| 8   | Proprietary Trading Network |
+| 18  | Zeus                    |
+| 30  | Bettensor               |
+| 31  | CANDLES                 |
+| 41  | SPORTSTENSOR            |
+| 48  | NextPlace               |
+| 50  | Synth                   |
+| 55  | Precog                  |
+| 57  | Gaia                    |
+
+## #19 🧪 Rayon Labs
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 19  | Nineteen.ai             |
+| 56  | Gradients               |
+| 64  | Chutes                  |
+
+## #20 🛡️ Security
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 60  | Bitsec.ai               |
+| 61  | RedTeam                 |
+| 81  | Patrol (TAO.com)        |
+
+## #21 🏅 Sports
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 30  | Bettensor               |
+| 41  | SPORTSTENSOR            |
+| 44  | Score                   |
+
+## #22 💾 Storage
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 13  | Data Universe           |
+| 24  | OMEGA Labs              |
+| 26  | Storb                   |
+| 42  | Real-Time Data by Masa  |
+| 75  | Hippius                 |
+
+## #23 📈 Trading
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 8   | Proprietary Trading Network |
+| 31  | CANDLES                 |
+| 50  | Synth                   |
+| 53  | EfficientFrontier       |
+| 55  | Precog                  |
+| 63  | Alpha Trader Exchange (ATX) |
+
+## #24 🧐 Training
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 3   | Templar                 |
+| 9   | iota                    |
+| 11  | Dippy                   |
+| 21  | OMEGA Any-to-Any        |
+| 29  | Coldint                 |
+| 33  | ReadyAI                 |
+| 37  | Finetuning              |
+| 38  | Distributed Training    |
+| 56  | Gradients               |
+| 96  | FLock OFF               |
+
+## #25 🧹 Yuma
+
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 6   | Infinite Games          |
+| 10  | Sturdy                  |
+| 42  | Real-Time Data by Masa  |
+| 44  | Score                   |
+| 55  | Precog                  |
+| 58  | Dippy Speech            |
 | 59  | Agent Arena by Masa     |
 | 60  | Bitsec.ai               |
 | 61  | RedTeam                 |
-| 62  | Ridges AI               |
-| 92  | ReinforcedAI            |
-| 94  | Eastworld               |
+| 70  | Vericore                |
+| 96  | FLock OFF               |
 
-## #6 🏆 Sports Predictions
+## #26 ❓ Unknown & For Sale
 
-| UID | Subnet Name   |
-|-----|---------------|
-| 30  | Bettensor     |
-| 41  | SPORTSTENSOR  |
-| 44  | Score         |
+| UID | Subnet Name             |
+|-----|-------------------------|
+| 15  | Unknown                 |
+| 28  | Unknown                 |
+| 47  | for sale                |
+| 67  | Unknown                 |
+| 69  | Unknown                 |
+| 71  | Unknown                 |
+| 74  | Unknown                 |
+| 78  | Unknown                 |
+| 82  | Unknown                 |
+| 102 | for sale                |
+| 104 | Unknown                 |
 
-## #7 🧬 DeSci (Decentralized Science)
-
-| UID | Subnet Name |
-|-----|-------------|
-| 25  | Mainframe   |
-| 68  | NOVA        |
-| 76  | Safe Scan   |
-
-## #8 🌐 Social & Indexing
-
-| UID | Subnet Name |
-|-----|-------------|
-| 5   | OpenKaito   |
-| 22  | Desearch    |
-| 23  | Nuance      |
-
-## #9 📣 Marketing & Discovery Platforms
-
-| UID | Subnet Name |
-|-----|-------------|
-| 16  | BitAds      |
-| 48  | NextPlace   |
-| 66  | FakeNews    |
-| 87  | CheckerChain|
-| 93  | Bitcast     |
-
-## #10 ❓ Unknown & For Sale
-
-| UID | Subnet Name |
-|-----|-------------|
-| 15  | Unknown     |
-| 28  | Unknown     |
-| 47  | for sale    |
-| 67  | Unknown     |
-| 69  | Unknown     |
-| 71  | Unknown     |
-| 74  | Unknown     |
-| 78  | Unknown     |
-| 82  | Unknown     |
-| 102 | for sale    |
-| 104 | Unknown     |
-
-## #11 🚫 Not Active (DO NOT BUY)
+## #27 ❌ Not Active (DO NOT BUY)
 
 | UID | Subnet Name             |
 |-----|-------------------------|
@@ -255,10 +431,9 @@ A categorized reference of Bittensor subnets.
 | 114 | Єclipse Project         |
 | 115 | Cognify                 |
 | 116 | SolMev                  |
-
 ---
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 This project is experimental and intended for educational and testing purposes only.
 
 🧪 Category mappings are based on current public documentation and community knowledge. Subnets may evolve, rebrand, or change purpose at any time.

@@ -8,20 +8,36 @@ import re
 README_FILE = Path(__file__).parent.joinpath("README.md")
 LOG_FILE = Path(__file__).parent.joinpath("staking_log.txt")
 
-# All categories (including #11 for display, but not selectable)
+# All categories (including #27 for display, but not selectable)
 categories = {
     0:  "🌱 Root",
-    1:  "🧠 AI Data, Training, Inference",
-    2:  "🖥️ Compute, Storage, Infrastructure",
-    3:  "📈 Trading and Yield",
-    4:  "🎨 Generative AI",
-    5:  "💡 Coding and AI Agents",
-    6:  "🏆 Sports Predictions",
-    7:  "🧬 DeSci (Decentralized Science)",
-    8:  "🌐 Social & Indexing",
-    9:  "📣 Marketing & Discovery Platforms",
-    10: "❓ Unknown & For Sale",
-    11: "🚫 Not Active (DO NOT BUY)"
+    1:  "🧿 Ch3RNØbØG's Picks",
+    2:  "🧊 3D",
+    3:  "🌟 Agents",
+    4:  "💻 Code",
+    5:  "💾 Compute",
+    6:  "🔐 Cryptography",
+    7:  "📊 Data",
+    8:  "💲 DeFi",
+    9:  "🧬 DeSci",
+    10: "🕵️  Detection",
+    11: "🧠 Inference",
+    12: "🛠️  Infra",
+    13: "🌀 Latent Holdings",
+    14: "🌌 Macrocosmos",
+    15: "📣 Marketing",
+    16: "🎥 Multimodal",
+    17: "⚙️  Nickel5",
+    18: "🔮 Prediction",
+    19: "🧪 Rayon Labs",
+    20: "🛡️  Security",
+    21: "🏅 Sports",
+    22: "💾 Storage",
+    23: "📈 Trading",
+    24: "🧐 Training",
+    25: "🧹 Yuma",
+    26: "❓ Unknown & For Sale",
+    27: "❌ Not Active (DO NOT BUY)"
 }
 
 def parse_subnets_from_readme():
@@ -42,8 +58,8 @@ def parse_subnets_from_readme():
     categories_subnets = {
         int(num): {
             "name": title.strip(),
-            "uids": [
-                int(parts[1].strip())
+            "entries": [
+                (int(parts[1].strip()), parts[2].strip())
                 for line in table.strip().split("\n")
                 if (parts := line.split("|")) and parts[1].strip().isdigit()
             ]
@@ -82,25 +98,29 @@ def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float):
 
 def main():
     subnets_by_cat = parse_subnets_from_readme()
-    print("📊 Bittensor TAO Staking Assistant\nChoose a subnet category:\n")
+    print("📊 Bittensor TAO Staking Assistant\nChoose one or more subnet categories (comma-separated):\n")
     for k, v in categories.items():
         print(f" {k:>2}: {v}")
     try:
-        choice = int(input("\nEnter category number: "))
+        choices = input("\nEnter category number(s): ").split(",")
+        choices = [int(c.strip()) for c in choices]
     except ValueError:
         print("❌ Invalid input.")
         return
 
-    if choice not in categories:
-        print("❌ Invalid category.")
+    if any(c not in categories for c in choices):
+        print("❌ One or more invalid category numbers.")
         return
-    if choice == 11:
-        print("🚫 This category is not active.")
+    if any(c == 27 for c in choices):
+        print("🚫 One or more selected categories are not active.")
         return
 
-    subnets = subnets_by_cat.get(choice, {}).get("uids", [])
-    if not subnets:
-        print("⚠️ No subnets found for this category.")
+    selected_entries = []
+    for c in choices:
+        selected_entries.extend(subnets_by_cat.get(c, {}).get("entries", []))
+
+    if not selected_entries:
+        print("⚠️ No subnets found for selected categories.")
         return
 
     wallet_name = input("🔑 Enter your Bittensor wallet name: [default `default`]:").strip() or "default"
@@ -114,14 +134,18 @@ def main():
             print("❌ Invalid amount.")
 
     print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
-    print("    Category #{} — {}".format(choice, categories[choice]))
+    for c in choices:
+        print(f"    Category #{c} — {categories[c]}")
+    print("    Subnets:")
+    for uid, name in selected_entries:
+        print(f"     • UID {uid}: {name}")
     if input("✅ Confirm? (yes/no): ").strip().lower() != "yes":
         return
     if input("🛑 Final confirmation — proceed with staking? (yes/no): ").strip().lower() != "yes":
         return
 
-    amount_each = total_tao / len(subnets)
-    print("📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(subnets)))
+    amount_each = total_tao / len(selected_entries)
+    print("📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(selected_entries)))
 
     log_entry("=== Staking Log - {} ===".format(datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')))
     stake(
