@@ -1,13 +1,12 @@
-import os
-import sys
-import getpass
+import json
+import shutil
 import subprocess
 from datetime import datetime
 from pathlib import Path
 import re
 
-README_FILE = "README.md"
-LOG_FILE = "staking_log.txt"
+README_FILE = Path(__file__).parent.joinpath("README.md")
+LOG_FILE = Path(__file__).parent.joinpath("staking_log.txt")
 
 # All categories (including #27 for display, but not selectable)
 categories = {
@@ -44,7 +43,11 @@ categories = {
 def parse_subnets_from_readme():
     if not Path(README_FILE).exists():
         print(f"❌ {README_FILE} not found.")
-        sys.exit(1)
+        raise FileNotFoundError
+
+    if not shutil.which("btcli"):
+        print("❌ `btcli` not found. Please make sure it is installed and in your path.")
+        raise FileNotFoundError
 
     with open(README_FILE, "r") as f:
         content = f.read()
@@ -67,30 +70,34 @@ def parse_subnets_from_readme():
 
 def log_entry(entry: str):
     now = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    with open(LOG_FILE, "a") as f:
+    with open(LOG_FILE, "a+") as f:
         f.write(f"{now} | {entry}\n")
 
-def stake(wallet_name, password, uid, amount):
+def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float):
     try:
-        proc = subprocess.Popen(
-            ["btcli", "stake", "add", "--wallet-name", wallet_name, "--netuid", str(uid), "--amount", str(amount)],
-            stdin=subprocess.PIPE,
+        proc = subprocess.run(
+            ["btcli", "stake", "add", "--wallet-name", wallet_name, "--wallet-path", wallet_path, "--netuids", ",".join(str(x) for x in uids), "--amount", str(amount), "--json-output"],
+            stdin=None,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True
         )
-        stdout, stderr = proc.communicate(password + "\n")
-        print(stdout)
-        if proc.returncode != 0:
-            print(f"⚠️ Error staking to UID {uid}: {stderr}")
-            log_entry(f"UID: {uid} | FAILED | TAO Used: {amount}")
-        else:
-            log_entry(f"UID: {uid} | SUCCESS | TAO Used: {amount}")
+        stdout = proc.stdout
+        captured = json.loads(stdout)
+        for netuid_ in captured["staking_success"]:
+            for staking_address in captured["staking_success"][netuid_]:
+                if not captured["staking_success"][netuid_][staking_address]:
+                    err_msg = captured["error_messages"][netuid_][staking_address]
+                    print(f"⚠️ Error staking to UID {netuid_}: {err_msg}")
+                    log_entry(f"UID: {netuid_} | FAILED | TAO Used: {amount}")
+                else:
+                    log_entry(f"UID: {netuid_} | SUCCESS | TAO Used: {amount}")
     except Exception as e:
         print(f"❌ Exception: {e}")
-        log_entry(f"UID: {uid} | EXCEPTION | TAO Used: {amount}")
+        log_entry(f"UID: {','.join(str(x) for x in uids)} | EXCEPTION | TAO Used: {amount}")
 
 def main():
+    subnets_by_cat = parse_subnets_from_readme()
     print("📊 Bittensor TAO Staking Assistant\nChoose one or more subnet categories (comma-separated):\n")
     for k, v in categories.items():
         print(f" {k:>2}: {v}")
@@ -108,7 +115,6 @@ def main():
         print("🚫 One or more selected categories are not active.")
         return
 
-    subnets_by_cat = parse_subnets_from_readme()
     selected_entries = []
     for c in choices:
         selected_entries.extend(subnets_by_cat.get(c, {}).get("entries", []))
@@ -117,13 +123,15 @@ def main():
         print("⚠️ No subnets found for selected categories.")
         return
 
-    wallet_name = input("🔑 Enter your Bittensor wallet name: ").strip()
-    password = getpass.getpass("🔐 Enter wallet password: ").strip()
-    try:
-        total_tao = float(input("💰 Enter total amount of TAO to stake: "))
-    except ValueError:
-        print("❌ Invalid amount.")
-        return
+    wallet_name = input("🔑 Enter your Bittensor wallet name: [default `default`]:").strip() or "default"
+    wallet_path_ = input("🔑 Enter the path to your Bittensor wallets [default: `~/.bittensor/wallets`]:").strip() or "~/.bittensor/wallets"
+
+    while True:
+        try:
+            total_tao = float(input("💰 Enter total amount of TAO to stake evenly between the selected subnets: "))
+            break
+        except ValueError:
+            print("❌ Invalid amount.")
 
     print("\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(total_tao))
     for c in choices:
@@ -131,17 +139,18 @@ def main():
     print("    Subnets:")
     for uid, name in selected_entries:
         print(f"     • UID {uid}: {name}")
-    if input("✅ Confirm? (yes/no): ").lower() != "yes":
+    if input("✅ Confirm? (yes/no): ").strip().lower() != "yes":
         return
-    if input("🛑 Final confirmation — proceed with staking? (yes/no): ").lower() != "yes":
+    if input("🛑 Final confirmation — proceed with staking? (yes/no): ").strip().lower() != "yes":
         return
 
     amount_each = total_tao / len(selected_entries)
     print("📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(selected_entries)))
 
     log_entry("=== Staking Log - {} ===".format(datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')))
-    for uid, _ in selected_entries:
-        stake(wallet_name, password, uid, amount_each)
+    stake(
+        wallet_name=wallet_name, wallet_path=wallet_path_, uids=subnets, amount=amount_each
+    )
 
 if __name__ == "__main__":
     main()
