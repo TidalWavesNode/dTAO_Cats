@@ -145,11 +145,13 @@ def main():
         return
 
     amount_each = total_tao / len(selected_entries)
-    print("📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(selected_entries)))
+    uids = [uid for uid, _ in selected_entries]
 
+    print("📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(uids)))
     log_entry("=== Staking Log - {} ===".format(datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')))
+
     stake(
-        wallet_name=wallet_name, wallet_path=wallet_path_, uids=subnets, amount=amount_each
+        wallet_name=wallet_name, wallet_path=wallet_path_, uids=uids, amount=amount_each
     )
 
 if __name__ == "__main__":
