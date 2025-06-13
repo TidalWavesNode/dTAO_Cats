@@ -1,6 +1,6 @@
 # Bittensor Staking Assistant by Subnet Category
 
-## This script allows you to automatically stake a chosen amount of TAO equally across all subnets within a selected category or categories.
+## This script allows you to easily stake a chosen amount of TAO equally across all subnets within a selected category or categories.
 
 ## 📚 Table of Contents
 
@@ -15,9 +15,6 @@
 ---
 
 - [#0  🌱 Root](#0--root)  
-
----
-
 - [#1  🧿 Ch3RNØbØG's Picks](#1--ch3rnøbøgs-picks)  
 - [#2  🧊 3D](#2--3d)  
 - [#3  🌟 Agents](#3--agents)  
@@ -25,19 +22,13 @@
 - [#5  💾 Compute](#5--compute)  
 - [#6  🔐 Cryptography](#6--cryptography)  
 - [#7  📊 Data](#7--data)  
-
----
-
 - [#8  💲 DeFi](#8--defi)  
 - [#9  🧬 DeSci](#9--desci)  
 - [#10 🕵️ Detection](#10--detection)  
 - [#11 🧠 Inference](#11--inference)  
 - [#12 🛠️ Infra](#12--infra)  
 - [#13 🌀 Latent Holdings](#13--latent-holdings)  
-- [#14 🌌 Macrocosmos](#14--macrocosmos)  
-
----
-
+- [#14 🌌 Macrocosmos](#14--macrocosmos)
 - [#15 📣 Marketing](#15--marketing)  
 - [#16 🎥 Multimodal](#16--multimodal)  
 - [#17 ⚙️ Nickel5](#17--nickel5)  
@@ -45,9 +36,6 @@
 - [#19 🧪 Rayon Labs](#19--rayon-labs)  
 - [#20 🛡️ Security](#20--security)  
 - [#21 🏅 Sports](#21--sports)  
-
----
-
 - [#22 💾 Storage](#22--storage)  
 - [#23 📈 Trading](#23--trading)  
 - [#24 🧐 Training](#24--training)  
