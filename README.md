@@ -1,4 +1,6 @@
-# This script allows you to automatically stake a chosen amount of TAO equally across all subnets within a selected category or categories.
+# Bittensor Staking Assistant by Subnet Category
+
+## This script allows you to automatically stake a chosen amount of TAO equally across all subnets within a selected category or categories.
 
 ## 📚 Table of Contents
 
