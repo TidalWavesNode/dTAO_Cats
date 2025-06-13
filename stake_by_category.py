@@ -1,7 +1,7 @@
 import shutil
-import subprocess
 import datetime
 import getpass
+import pexpect
 from pathlib import Path
 import re
 
@@ -10,11 +10,11 @@ LOG_FILE = Path(__file__).parent.joinpath("staking_log.txt")
 
 categories = {
     0: "🌱 Root",
-    1: "🧿 Ch3RNØbØG's Picks",
-    2: "🧊 3D",
+    1: "🭿 Ch3RNØbØG's Picks",
+    2: "🤊 3D",
     3: "🌟 Agents",
     4: "💻 Code",
-    5: "💾 Compute",
+    5: "📂 Compute",
     6: "🔐 Cryptography",
     7: "📊 Data",
     8: "💲 DeFi",
@@ -31,14 +31,13 @@ categories = {
     19: "🧪 Rayon Labs",
     20: "🛡️  Security",
     21: "🏅 Sports",
-    22: "💾 Storage",
+    22: "📂 Storage",
     23: "📈 Trading",
-    24: "🧐 Training",
+    24: "🤮 Training",
     25: "🧹 Yuma",
     26: "❓ Unknown & For Sale",
     27: "❌ Not Active (DO NOT BUY)",
 }
-
 
 def parse_subnets_from_readme():
     if not Path(README_FILE).exists():
@@ -52,9 +51,7 @@ def parse_subnets_from_readme():
     with open(README_FILE, "r") as f:
         content = f.read()
 
-    pattern = (
-        r"## #(\d+)\s+([^\n]+?)\n+\| UID \| Subnet Name[\s\|\-]+\n((?:\|[^\n]*\n)+)"
-    )
+    pattern = r"## #(\d+)\s+([^\n]+?)\n+\| UID \| Subnet Name[\s\|\-]+\n((?:\|[^\n]*\n)+)"
     matches = re.findall(pattern, content)
 
     categories_subnets = {
@@ -70,18 +67,14 @@ def parse_subnets_from_readme():
     }
     return categories_subnets
 
-
 def now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
 
 def log_entry(entry: str):
     with open(LOG_FILE, "a+") as f:
         f.write(f"{now()} | {entry}\n")
 
-
 def parse_slippage(value: str) -> float:
-    """Parses slippage input like '5%', '5', or '0.05' into a decimal float."""
     value = value.strip().replace("%", "")
     try:
         val = float(value)
@@ -90,47 +83,36 @@ def parse_slippage(value: str) -> float:
         print("❌ Invalid slippage tolerance. Using default of 0.05 (5%).")
         return 0.05
 
-
-def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, hotkey: str, slippage: str, wallet_password: str):
+def stake(wallet_name, wallet_path, uids, amount, hotkey, slippage, wallet_password):
     print(f"🔐 Using validator hotkey: {hotkey}")
-
     for uid in uids:
-        print(f"📡 Staking to Subnet {uid}")
+        print(f"🛱 Staking to Subnet {uid}")
         try:
-            proc = subprocess.run(
-                [
-                    "btcli",
-                    "stake",
-                    "add",
-                    "--wallet-name", wallet_name,
-                    "--wallet-path", wallet_path,
-                    "--netuid", str(uid),
-                    "--amount", str(amount),
-                    "--hotkey-ss58-address", hotkey,
-                    "--slippage-tolerance", slippage,
-                    "--no_prompt"
-                ],
-                input=wallet_password + "\n",
-                text=True,
-                stderr=subprocess.PIPE,
+            child = pexpect.spawn(
+                f"btcli stake add --wallet-name {wallet_name} --wallet-path {wallet_path} "
+                f"--netuid {uid} --amount {amount} --hotkey-ss58-address {hotkey} "
+                f"--slippage-tolerance {slippage} --no_prompt",
+                encoding="utf-8",
+                timeout=60,
             )
-            if proc.stderr != "":
-                print(f"⚠️ Error staking to UID {uid}: {proc.stderr}")
+            child.expect("Enter your password:")
+            child.sendline(wallet_password)
+            child.expect(pexpect.EOF)
+            output = child.before
+            if "Error" in output or "failed" in output.lower():
+                print(f"⚠️ Error staking to UID {uid}:
+{output}")
                 log_entry(f"UID: {uid} | FAILED | TAO Used: {amount}")
             else:
+                print(output)
                 log_entry(f"UID: {uid} | SUCCESS | TAO Used: {amount}")
-        except Exception as e:
-            print(f"❌ Exception: {e}")
-            log_entry(
-                f"UID: {','.join(str(x) for x in uids)} | EXCEPTION | TAO Used: {amount}"
-            )
-
+        except pexpect.exceptions.ExceptionPexpect as e:
+            print(f"❌ Exception while staking to UID {uid}: {e}")
+            log_entry(f"UID: {uid} | EXCEPTION | TAO Used: {amount}")
 
 def main():
     subnets_by_cat = parse_subnets_from_readme()
-    print(
-        "📊 Bittensor TAO Staking Assistant\nChoose one or more subnet categories (comma-separated):\n"
-    )
+    print("\n📊 Bittensor TAO Staking Assistant\nChoose one or more subnet categories (comma-separated):\n")
     for k, v in categories.items():
         print(f" {k:>2}: {v}")
     try:
@@ -155,84 +137,44 @@ def main():
         print("⚠️ No subnets found for selected categories.")
         return
 
-    wallet_path_ = (
-        input(
-            "🔑 Enter the path to your Bittensor wallets [default: `~/.bittensor/wallets`]:" 
-        ).strip()
-        or "~/.bittensor/wallets"
-    )
-
-    wallet_name = (
-        input("🔑 Enter your Bittensor wallet name [default: `default`]: ").strip()
-        or "default"
-    )
-
-    wallet_password = getpass.getpass("🔑 Enter your wallet password: ")
+    wallet_path_ = input("🔐 Enter the path to your Bittensor wallets [default: ~/.bittensor/wallets]: ").strip() or "~/.bittensor/wallets"
+    wallet_name = input("🔐 Enter your Bittensor wallet name [default: default]: ").strip() or "default"
+    wallet_password = getpass.getpass("🔐 Enter your wallet password: ")
 
     default_hotkey = "5FFApaS75bv5pJHfAp2FVLBj9ZaXuFDjEypsaBNc1wCfe52v"
-    hotkey = (
-        input(
-            f"🔐 Enter hotkey SS58 address [default: RoundTable21 → {default_hotkey}]: "
-        ).strip()
-        or default_hotkey
-    )
+    hotkey = input(f"🔐 Enter hotkey SS58 address [default: RoundTable21 → {default_hotkey}]: ").strip() or default_hotkey
 
-    raw_slippage = input(
-        "💱 Enter slippage tolerance (e.g. 5%, 0.05 = 5%) [default: 5%]: "
-    ).strip() or "5%"
+    raw_slippage = input("\n💱 Enter slippage tolerance (e.g. 5%, 0.05 = 5%) [default: 5%]: ").strip() or "5%"
     slippage = str(parse_slippage(raw_slippage))
     slippage_display = "{:.2f}%".format(float(slippage) * 100)
 
     while True:
         try:
-            total_tao = float(
-                input(
-                    "💰 Enter total amount of TAO to stake evenly between the selected subnets: "
-                )
-            )
+            total_tao = float(input("💰 Enter total amount of TAO to stake evenly between the selected subnets: "))
             break
         except ValueError:
             print("❌ Invalid amount.")
 
-    print(
-        "\n⚠️ You are about to stake {:.4f} TAO equally across subnets in:".format(
-            total_tao
-        )
-    )
+    print(f"\n️⚠ You are about to stake {total_tao:.4f} TAO equally across subnets in:")
     for c in choices:
         print(f"    Category #{c} — {categories[c]}")
     print("    Subnets:")
     for uid, name in selected_entries:
         print(f"     • UID {uid}: {name}")
     print(f"    Slippage Tolerance: {slippage_display}")
-    if input("✅ Confirm? (yes/no): ").strip().lower() != "yes":
+
+    if input("\n✅ Confirm? (yes/no): ").strip().lower() != "yes":
         return
-    if (
-        input("🛑 Final confirmation — proceed with staking? (yes/no): ")
-        .strip()
-        .lower()
-        != "yes"
-    ):
+    if input("🚩 Final confirmation — proceed with staking? (yes/no): ").strip().lower() != "yes":
         return
 
     amount_each = total_tao / len(selected_entries)
     uids = [uid for uid, _ in selected_entries]
 
-    print(
-        "📡 Staking {:.6f} TAO to each of {} subnets...".format(amount_each, len(uids))
-    )
+    print(f"\n🛱 Staking {amount_each:.6f} TAO to each of {len(uids)} subnets...")
     log_entry(f"=== Staking Log - {now()} ===")
 
-    stake(
-        wallet_name=wallet_name,
-        wallet_path=wallet_path_,
-        uids=uids,
-        amount=amount_each,
-        hotkey=hotkey,
-        slippage=slippage,
-        wallet_password=wallet_password,
-    )
-
+    stake(wallet_name, wallet_path_, uids, amount_each, hotkey, slippage, wallet_password)
 
 if __name__ == "__main__":
     main()
