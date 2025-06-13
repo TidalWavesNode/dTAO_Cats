@@ -174,7 +174,7 @@ def main():
     default_hotkey = "5FFApaS75bv5pJHfAp2FVLBj9ZaXuFDjEypsaBNc1wCfe52v"
     hotkey = (
         input(
-            f"🔐 Enter hotkey SS58 address [default: RoundTable21 → {default_hotkey}]: "
+            f"🔐 Enter validator hotkey SS58 address you want to delegate to [default: RoundTable21 → {default_hotkey}]: "
         ).strip()
         or default_hotkey
     )
