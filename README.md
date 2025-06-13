@@ -71,6 +71,7 @@
 ```
 sudo apt update
 sudo apt install python3 python3-pip -y
+sudo pip install pexpect
 ```
 
 2. **Clone this repository**
