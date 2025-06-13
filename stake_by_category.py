@@ -1,13 +1,13 @@
 import shutil
 import subprocess
 import datetime
+import getpass
 from pathlib import Path
 import re
 
 README_FILE = Path(__file__).parent.joinpath("README.md")
 LOG_FILE = Path(__file__).parent.joinpath("staking_log.txt")
 
-# All categories (including #27 for display, but not selectable)
 categories = {
     0: "🌱 Root",
     1: "🧿 Ch3RNØbØG's Picks",
@@ -91,7 +91,7 @@ def parse_slippage(value: str) -> float:
         return 0.05
 
 
-def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, hotkey: str, slippage: str):
+def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, hotkey: str, slippage: str, wallet_password: str):
     print(f"🔐 Using validator hotkey: {hotkey}")
 
     for uid in uids:
@@ -110,7 +110,7 @@ def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, ho
                     "--slippage-tolerance", slippage,
                     "--no_prompt"
                 ],
-                stdin=None,
+                input=wallet_password + "\n",
                 text=True,
                 stderr=subprocess.PIPE,
             )
@@ -166,6 +166,8 @@ def main():
         input("🔑 Enter your Bittensor wallet name [default: `default`]: ").strip()
         or "default"
     )
+
+    wallet_password = getpass.getpass("🔑 Enter your wallet password: ")
 
     default_hotkey = "5FFApaS75bv5pJHfAp2FVLBj9ZaXuFDjEypsaBNc1wCfe52v"
     hotkey = (
@@ -228,6 +230,7 @@ def main():
         amount=amount_each,
         hotkey=hotkey,
         slippage=slippage,
+        wallet_password=wallet_password,
     )
 
 
