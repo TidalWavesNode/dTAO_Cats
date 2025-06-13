@@ -80,7 +80,18 @@ def log_entry(entry: str):
         f.write(f"{now()} | {entry}\n")
 
 
-def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, hotkey: str):
+def parse_slippage(value: str) -> float:
+    """Parses slippage input like '5%', '5', or '0.05' into a decimal float."""
+    value = value.strip().replace("%", "")
+    try:
+        val = float(value)
+        return val / 100 if val > 1 else val
+    except ValueError:
+        print("❌ Invalid slippage tolerance. Using default of 0.05 (5%).")
+        return 0.05
+
+
+def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, hotkey: str, slippage: str):
     print(f"🔐 Using validator hotkey: {hotkey}")
 
     for uid in uids:
@@ -96,6 +107,7 @@ def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, ho
                     "--netuid", str(uid),
                     "--amount", str(amount),
                     "--hotkey-ss58-address", hotkey,
+                    "--slippage-tolerance", slippage,
                     "--no_prompt"
                 ],
                 stdin=None,
@@ -163,6 +175,12 @@ def main():
         or default_hotkey
     )
 
+    raw_slippage = input(
+        "💱 Enter slippage tolerance (e.g. 5%, 0.05 = 5%) [default: 5%]: "
+    ).strip() or "5%"
+    slippage = str(parse_slippage(raw_slippage))
+    slippage_display = "{:.2f}%".format(float(slippage) * 100)
+
     while True:
         try:
             total_tao = float(
@@ -184,6 +202,7 @@ def main():
     print("    Subnets:")
     for uid, name in selected_entries:
         print(f"     • UID {uid}: {name}")
+    print(f"    Slippage Tolerance: {slippage_display}")
     if input("✅ Confirm? (yes/no): ").strip().lower() != "yes":
         return
     if (
@@ -208,6 +227,7 @@ def main():
         uids=uids,
         amount=amount_each,
         hotkey=hotkey,
+        slippage=slippage,
     )
 
 
