@@ -46,9 +46,7 @@ def parse_subnets_from_readme():
         raise FileNotFoundError
 
     if not shutil.which("btcli"):
-        print(
-            "❌ `btcli` not found. Please make sure it is installed and in your path."
-        )
+        print("❌ `btcli` not found. Please make sure it is installed and in your path.")
         raise FileNotFoundError
 
     with open(README_FILE, "r") as f:
@@ -74,7 +72,7 @@ def parse_subnets_from_readme():
 
 
 def now() -> str:
-    return datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def log_entry(entry: str):
@@ -145,15 +143,16 @@ def main():
         print("⚠️ No subnets found for selected categories.")
         return
 
+    wallet_path_ = (
+        input(
+            "🔑 Enter the path to your Bittensor wallets [default: `~/.bittensor/wallets`]:" 
+        ).strip()
+        or "~/.bittensor/wallets"
+    )
+
     wallet_name = (
         input("🔑 Enter your Bittensor wallet name: [default `default`]:").strip()
         or "default"
-    )
-    wallet_path_ = (
-        input(
-            "🔑 Enter the path to your Bittensor wallets [default: `~/.bittensor/wallets`]:"
-        ).strip()
-        or "~/.bittensor/wallets"
     )
 
     while True:
