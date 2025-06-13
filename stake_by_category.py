@@ -80,7 +80,9 @@ def log_entry(entry: str):
         f.write(f"{now()} | {entry}\n")
 
 
-def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float):
+def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float, hotkey: str):
+    print(f"🔐 Using validator hotkey: {hotkey}")
+
     for uid in uids:
         print(f"📡 Staking to Subnet {uid}")
         try:
@@ -89,14 +91,12 @@ def stake(wallet_name: str, wallet_path: str, uids: list[int], amount: float):
                     "btcli",
                     "stake",
                     "add",
-                    "--wallet-name",
-                    wallet_name,
-                    "--wallet-path",
-                    wallet_path,
-                    "--netuid",
-                    str(uid),
-                    "--amount",
-                    str(amount),
+                    "--wallet-name", wallet_name,
+                    "--wallet-path", wallet_path,
+                    "--netuid", str(uid),
+                    "--amount", str(amount),
+                    "--hotkey-ss58-address", hotkey,
+                    "--no_prompt"
                 ],
                 stdin=None,
                 text=True,
@@ -151,8 +151,16 @@ def main():
     )
 
     wallet_name = (
-        input("🔑 Enter your Bittensor wallet name: [default `default`]:").strip()
+        input("🔑 Enter your Bittensor wallet name [default: `default`]: ").strip()
         or "default"
+    )
+
+    default_hotkey = "5FFApaS75bv5pJHfAp2FVLBj9ZaXuFDjEypsaBNc1wCfe52v"
+    hotkey = (
+        input(
+            f"🔐 Enter hotkey SS58 address [default: RoundTable21 → {default_hotkey}]: "
+        ).strip()
+        or default_hotkey
     )
 
     while True:
@@ -195,7 +203,11 @@ def main():
     log_entry(f"=== Staking Log - {now()} ===")
 
     stake(
-        wallet_name=wallet_name, wallet_path=wallet_path_, uids=uids, amount=amount_each
+        wallet_name=wallet_name,
+        wallet_path=wallet_path_,
+        uids=uids,
+        amount=amount_each,
+        hotkey=hotkey,
     )
 
 
