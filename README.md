@@ -89,8 +89,7 @@ Enter the total TAO to distribute equally across all subnets in the chosen categ
 
 Confirm to stake.
 
-![image](https://github.com/user-attachments/assets/707c0890-97ae-4604-bded-e8bc329aa867)
-
+![image](https://github.com/user-attachments/assets/b7a01880-a8a0-4b07-8304-74f9978540af)
 
 ## 📁 Example Log Output
 ```
