@@ -75,6 +75,7 @@ cd dTAO_Cats
 ```
 python3 stake_by_category.py
 ```
+![image](https://github.com/user-attachments/assets/251c584b-6cf6-40c2-bec3-142c3bec5fc2)
 
 4. Follow the prompts
    
@@ -87,6 +88,9 @@ Enter wallet name and password.
 Enter the total TAO to distribute equally across all subnets in the chosen category.
 
 Confirm to stake.
+
+![image](https://github.com/user-attachments/assets/707c0890-97ae-4604-bded-e8bc329aa867)
+
 
 ## 📁 Example Log Output
 ```
