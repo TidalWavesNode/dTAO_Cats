@@ -171,7 +171,7 @@ def main():
 
     wallet_password = getpass.getpass("🔑 Enter your wallet password: ")
 
-    default_hotkey = "5FFApaS75bv5pJHfAp2FVLBj9ZaXuFDjEypsaBNc1wCfe52v"
+    default_hotkey = "5C8V32baxQx7gAh1Tewcpot8hnG2WkGhC87JG3wZgCMsDsn5"
     hotkey = (
         input(
             f"🔐 Enter the validator hotkey SS58 address you want to delegate to [default: RoundTable21 → {default_hotkey}]: "
