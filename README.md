@@ -90,8 +90,10 @@ Confirm to stake.
 
 ## 📁 Example Log Output
 ```
-=== Staking Log - 2025-06-04T15:21:12Z ===
-2025-06-04T15:21:13Z | UID: 1 | Alpha: 0.3745 | TAO Used: 0.11400000 | Rate: 0.3041 τ/α | Slippage: 0.4%
+2025-06-13T15:14:02Z | === Staking Log - 2025-06-13T15:14:02Z ===
+2025-06-13T15:14:26Z | UID: 30 | SUCCESS | TAO Used: 0.1
+2025-06-13T15:14:49Z | UID: 41 | SUCCESS | TAO Used: 0.1
+2025-06-13T15:15:14Z | UID: 44 | SUCCESS | TAO Used: 0.1
 ```
 ---
 
