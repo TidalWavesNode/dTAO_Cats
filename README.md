@@ -127,7 +127,6 @@ A categorized reference of Bittensor subnets.
 | 5   | OpenKaito               |
 | 10  | Sturdy                  |
 | 12  | Compute Horde           |
-| 15  | Unknown                 |
 | 17  | 404GEN                  |
 | 18  | Zeus                    |
 | 31  | CANDLES                 |
